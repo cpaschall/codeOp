@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
+const FORCETABLE = process.env.FORCETABLE;
 
 const sess = {
   secret: 'Super secret secret',
@@ -36,6 +37,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: FORCETABLE }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
