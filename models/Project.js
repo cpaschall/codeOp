@@ -29,6 +29,14 @@ Project.init(
                 this.setDataValue('language', val.join(', '));
             },
         },
+        proj_owned: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+              },
+        proj_contr:{
+            type: DataTypes.BOOLEAN,
+                defaultValue: false
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
