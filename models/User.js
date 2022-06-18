@@ -35,26 +35,26 @@ User.init(
         len: [4],
       },
     }, 
-    proj_own: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      get() {
-          return this.getDataValue('proj_own').split(', ')
-      },
-      set(val) {
-          this.setDataValue('proj_own', val.join(', '));
-      },
-    },
-    proj_contrib: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      get() {
-          return this.getDataValue('proj_contrib').split(', ')
-      },
-      set(val) {
-          this.setDataValue('proj_contrib', val.join(', '));
-      },
-    },
+    // proj_own: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    //   get() {
+    //       return this.getDataValue('proj_own').split(', ')
+    //   },
+    //   set(val) {
+    //       this.setDataValue('proj_own', val.join(', '));
+    //   },
+    // },
+    // proj_contrib: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    //   get() {
+    //       return this.getDataValue('proj_contrib').split(', ')
+    //   },
+    //   set(val) {
+    //       this.setDataValue('proj_contrib', val.join(', '));
+    //   },
+    // },
     proj_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
