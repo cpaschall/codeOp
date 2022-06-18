@@ -37,7 +37,7 @@ User.init(
     }, 
     proj_own: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       get() {
           return this.getDataValue('proj_own').split(', ')
       },
@@ -47,7 +47,7 @@ User.init(
     },
     proj_contrib: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       get() {
           return this.getDataValue('proj_contrib').split(', ')
       },
@@ -57,6 +57,7 @@ User.init(
     },
     proj_id: {
       type: DataTypes.INTEGER,
+      allowNull: true,
       references: {
         model: 'project',
         key: 'id'
