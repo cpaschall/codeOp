@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Project } = require('../../models');
 const withAuth = require('../../utils/helpers');
 
+// Create
 router.post('/', withAuth, async (req, res) => {
     try {
         const newProject = await Project.create({
@@ -15,6 +16,45 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
+// Read
+router.get('/', async (req,res) => {
+    try {
+        const projectData = await Project.findAll()
+        res.status(200).json(projectData)
+    } catch (err) {
+        res.status(500).jason(err)
+    }
+});
+
+// Update
+router.put('/:id', withAuth, async (req, res) => {
+    try {
+        const projectData = await Project.update({
+        //   proj_name: req.body.proj_name,
+        //   summary: req.body.summary,
+        //   language: req.body.language,
+        //   proj_owned: req.body.proj_owned,
+        //   proj_contr: req.body.proj_contr,
+        //   user_id: req.body.user_id
+          ...req.body,
+          user_id: req.session.user_id
+        },
+        {
+          where: {
+            id: req.params.id
+          },
+        });
+        if (!projectData) {
+          res.status(404).json({ message: 'No project found with this ID' });
+          return;
+        }
+        res.json(projectData);
+      } catch (err) {
+        res.status(400).json(err)
+      }
+});
+
+// Delete
 router.delete('/:id', withAuth, async (req, res) => {
     try {
         const projectData = await Project.destroy({
@@ -24,7 +64,7 @@ router.delete('/:id', withAuth, async (req, res) => {
             },
         });
         if (!projectData) {
-            res.status(404).json({ message: 'No project found with this id!' });
+            res.status(404).json({ message: 'No project found with this ID' });
             return;
         }
 
