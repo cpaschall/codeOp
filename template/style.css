@@ -11,3 +11,7 @@
   height: 70vh;
 }
 
+
+.btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
+  background-color: #FFAA00 !important;
+}
