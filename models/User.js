@@ -35,6 +35,16 @@ User.init(
         len: [4],
       },
     }, 
+    skills: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      get() {
+          return this.getDataValue('skills').split(', ')
+      },
+      set(val) {
+          this.setDataValue('skills', val.join(', '));
+      }
+    },
     // proj_own: {
     //   type: DataTypes.STRING,
     //   allowNull: true,
