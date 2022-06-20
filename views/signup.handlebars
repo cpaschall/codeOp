@@ -1,22 +1,35 @@
-<div class="column">
-<h2 class="title pb-4">create new account:</h2><hr>
-<form id="signup-form">
-  <div>
-    <label for="signup-name">username:</label>
-    <input type="text" id="signup-name"/>
+<div class="container py-5 text-center">
+  <h1 class="mb-4">Sign Up</h1>
+  <div class="row d-flex align justify-content-center h-100">
+    <div class="card" style="max-width: 40rem;">
+      <div class="card-body">
+        <form id="signup-form">
+          <div class="mb-4 mt-4">
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+              </div>
+            </div>
+
+            <div class="mb-4 mt-4">
+              <!-- <label for="formControlInput" class="form-label">Email address</label> -->
+              <input type="signup-email" class="form-control" placeholder="Enter your email address" id="signup-email">
+            </div>
+
+            <!-- Password input -->
+            <div class="mb-4">
+              <!-- <label for="formControlInput" class="form-label">Password</label> -->
+              <input type="password" class="form-control" placeholder="Enter password" id="signup-password">
+              <br>
+              <input type="password" class="form-control" placeholder="Re-enter password" id="signup-password">
+              <br>
+              <button id="signup" type="submit" class="btn btn-primary">Sign up</button>
+            </div>
+        </form>
+      </div>
+    </div>
   </div>
-  <div>
-    <label for="signup-email">email:</label>
-    <input type="text" id="signup-email" />
-  </div>
-    <label for="signup-password">password:</label>
-    <input type="password" id="signup-password" />
-  </div>
-  <div>
-    <button type="submit" class="signup-form">signup</button>
-  </div>
-</form>
 </div>
-
-
-
