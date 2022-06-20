@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { Project, User } = require('../models');
-// const withAuth = require('../utils/auth');
+
+const withAuth = require('../utils/helpers');
+
 
 router.get('/', async (req, res) => {
     try {
@@ -46,13 +48,17 @@ router.get('/project/:id', async (req, res) => {
     }
 });
 
-router.get('/login', (req, res) => {
-if (req.session.logged_in) {
-    res.redirect('/');
-    return;
-}
+router.get("/login", async (req, res) => {
+    res.render("login");
+  });
 
-res.render('login');
-});
+router.get("/signup", async (req, res) => {
+    return res.render("signup");
+  });
+
+  router.get("/project", async (req, res) => {
+    return res.render("project");
+  });
+
 
 module.exports = router;

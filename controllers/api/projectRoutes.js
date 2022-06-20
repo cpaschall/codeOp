@@ -22,7 +22,7 @@ router.get('/', async (req,res) => {
         const projectData = await Project.findAll()
         res.status(200).json(projectData)
     } catch (err) {
-        res.status(500).jason(err)
+        res.status(500).json(err)
     }
 });
 
