@@ -30,6 +30,6 @@ foreignKey: 'user_id'
 });
 
 Comment.belongsTo(Project, {
-  foreignKey: 'projec_id'
+  foreignKey: 'proj_id'
 });
 module.exports = { User, Project, Comment};
