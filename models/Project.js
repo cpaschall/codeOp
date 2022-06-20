@@ -29,6 +29,11 @@ Project.init(
                 this.setDataValue('language', val.join(', '));
             },
         },
+        proj_repo: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: URL
+        },
         proj_owned: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
