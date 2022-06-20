@@ -1,0 +1,64 @@
+<!-- paste to profile -->
+<section class="vh-100">
+    <div class="container rounded my-5">
+        <div class="row">
+            <div class="col-md-4" style="background-color: #00B6B6;">
+                <!-- photo rounded frame -->
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                    <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="profile picture">
+                    <span class="font-weight-bold">{{user.name}}</span>
+                    <span class="text-black-50">{{user.email}}</span>
+                </div>
+                <!-- users bio -->
+                <div class="d-flex flex-column p-3">
+                    <h4>My Bio:</h4>
+                    <p>
+                        This will be left blank for now.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <h4 class="text-right">Goals:</h4>
+                    </div>
+
+                    <div class="card text-white mb-3" style="background-color: #719BFD;">
+                        <p class="card-text">
+                            This will be left blank for now. Needed users data here
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <h4 class="text-right">Languages:</h4>
+                    </div>
+
+                    {{!-- this will be needed to looped over with user's language data which doesn't exist at the moment --}}
+                    <div class="card" id="language-list">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                        </ul>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <h4 class="text-right">Projects:</h4>
+                    </div>
+
+                    <div class="card" id="project-list">
+                        <ul class="list-group list-group-flush">
+                            {{!-- {{#each projects as |project|}} --}}
+                            <li class="list-group-item">
+                                <a href="#" class="text-dark">{{project.user.}}</a>
+                            </li>
+                            {{!-- {{/each}} --}}
+                        </ul>
+                    </div>
+
+                    <div class="my-3" id="edit-btn">
+                        <a href="#" class="btn btn-success text-dark">Edit Profile</a>
+                    </div>
+                </div>
+            </div>                
+        </div>
+    </div>
+</section>
