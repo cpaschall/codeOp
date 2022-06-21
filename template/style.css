@@ -1,0 +1,17 @@
+/* :root {
+    
+} */
+
+/* hero section */
+#hero .container-fluid {
+  background-image: url("../assets/VennDia.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 70vh;
+}
+
+
+.btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
+  background-color: #FFAA00 !important;
+}

@@ -1,0 +1,46 @@
+<div class="container py-5 text-center">
+    <h1 class="mb-4">Project</h1>
+    <div class="row d-flex align justify-content-center h-100">
+        <div class="card" style="max-width: 40rem;">
+            <div class="card-body">
+                <form id="project-form">
+                    <div class="mb-4 mt-4">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First name"
+                                    aria-label="First name">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                            </div>
+                        </div>
+
+                        <div class="mb-4 mt-4">
+                            <input type="email" class="form-control" placeholder="Enter your email address" id="email">
+                        </div>
+                        <div class="mb-4">
+                            <label for="project-content" class="form-label"></label>
+                            <textarea class="form-control" id="project-content" placeholder="Project details"
+                                rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="project-content" class="form-label"></label>
+                            <textarea class="form-control" id="project-content" placeholder="Skills needed"
+                                rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            {{#if id}}
+                            <button id="update-post" type="submit" class="btn btn-primary">Update</button>
+                            <button id="delete-post" type="submit" class="btn btn-danger">Delete</button>
+                            {{else}}
+                            <button class="mt-2 btn btn-primary btn-lg">Submit</button>
+                            {{/if}}
+                        </div>
+                </form>
+
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

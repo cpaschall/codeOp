@@ -32,9 +32,27 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [12],
+        len: [4],
+      },
+    }, 
+    skills: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      get() {
+          return this.getDataValue('skills').split(', ')
+      },
+      set(val) {
+          this.setDataValue('skills', val.join(', '));
       },
     },
+    proj_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'project',
+        key: 'id'
+      }, 
+    }
   },
   {
     hooks: {
