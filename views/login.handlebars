@@ -1,4 +1,4 @@
-<div class="container py-5 text-center">
+{{!-- <div class="container py-5 text-center">
     <h1 class="mb-4">Login</h1>
     <div class="row d-flex align justify-content-center h-100">
       <div class="card" style="max-width: 40rem;">
@@ -25,4 +25,44 @@
           </div>
       </div>
     </div>
-</div>
+</div> --}}
+
+<section class="py-5">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-centent h-100">
+            <!-- visual/image here -->
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="/assets/login_bg (1).png" class="img-fluid" alt="login visual">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4">
+                <!-- login form -->
+            <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                <form id="login-form">
+                    <!-- Email input -->
+                    <div class="form-outline my-4 ">
+                        <label class="form-label" for="email-input">Login to your account</label>
+                        <input type="email" id="login-email" class="form-control form-control-lg"
+                        placeholder="Email"/>
+                    </div>
+                    <!-- Password input -->
+                    <div class="form-outline mb-3">
+                        <input type="password" id="login-password" class="form-control form-control-lg"
+                        placeholder="Password"/>
+                    </div>
+
+                    <div class="divider d-flex align-items-center my-4">
+                        <p class="text-center fw-bold mx-3 mb-0">Or</p>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-center pb-4 pt-2">
+                        <p class="mb-0 me-2">Don't have an account?</p>
+                        <a href="/signup" class="btn btn-outline-danger" >Sign up</a>
+                    </div>
+                    
+                    <p class="fw-light">*Join a community of developers today!</p>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
