@@ -13,9 +13,11 @@
     <header>
         <!-- this should be pasted to 'main' -->
         <!-- navbar and footer should be shown in every pages -->
-        <nav class="navbar navbar-expand-md navbar-dark bg-primary p-3">
-            <div class="container">
-                <a href="#" class="navbar-brand">codeOP</a> 
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">
+                    <img src="../assets/logo.png" height="70px" alt="logo">
+                </a> 
 
                 <button 
                 class="navbar-toggler" 
@@ -90,35 +92,47 @@
             </div>
         </section>
 
+        <section id="about">
+            
+        </section>
+
         <!-- paste to login -->
-        <!-- image to be added -->
         <section class="vh-100 py-5">
             <div class="container-fluid h-custom">
                 <div class="row d-flex justify-content-center align-items-centent h-100">
                     <!-- visual/image here -->
                     <div class="col-md-9 col-lg-6 col-xl-5">
-                        <img src="" class="img-fluid" alt="login visual">
+                        <img src="../assets/login_bg (1).png" class="img-fluid" alt="login visual">
                     </div>
-                    <!-- login form -->
+                    <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                        <!-- login form -->
                     <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                        <form>
+                        <form id="login-form">
                             <!-- Email input -->
-                            <div class="form-outline mb-4">
-                                <input type="email" id="form3Example3" class="form-control form-control-lg"
-                                placeholder="Enter a valid email address" />
-                                <label class="form-label" for="form3Example3">Email address</label>
+                            <div class="form-outline my-4 ">
+                                <label class="form-label" for="email-input">Login to your account</label>
+                                <input type="email" id="login-email" class="form-control form-control-lg"
+                                placeholder="Email"/>
                             </div>
                             <!-- Password input -->
                             <div class="form-outline mb-3">
-                                <input type="password" id="form3Example4" class="form-control form-control-lg"
-                                placeholder="Enter password" />
-                                <label class="form-label" for="form3Example4">Password</label>
+                                <!-- <label class="form-label" for="password-input">Password</label> -->
+                                <input type="password" id="login-password" class="form-control form-control-lg"
+                                placeholder="Password"/>
                             </div>
 
                             <div class="divider d-flex align-items-center my-4">
                                 <p class="text-center fw-bold mx-3 mb-0">Or</p>
+                              </div>
+
+                            <div class="d-flex align-items-center justify-content-center pb-4 pt-2">
+                                <p class="mb-0 me-2">Don't have an account?</p>
+                                <a href="/signup" class="btn btn-outline-danger" >Sign up</a>
                             </div>
+                            
+                            <p class="fw-light">*Join a community of developers today!</p>
                         </form>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -149,7 +163,7 @@
                                 <h4 class="text-right">Goals:</h4>
                             </div>
 
-                            <div class="card text-white mb-3" style="background-color: #719BFD;">
+                            <div class="card mb-3">
                                 <p class="card-text">
                                     I wanna collab and improve my resume
                                 </p>
@@ -190,6 +204,7 @@
 
         </section>
 
+        
     </main>
 
     <footer class="p-5 bg-primary text-center text-light position-relative">

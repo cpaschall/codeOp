@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/c502137733.js"></script>
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/style copy.css">
 </head>
 
 <body>
@@ -21,7 +20,9 @@
         <!-- navbar and footer should be shown in every pages -->
         <nav class="navbar navbar-expand-md navbar-dark bg-primary p-3">
             <div class="container">
-                <a href="#" class="navbar-brand">codeOP</a>
+                <a href="#" class="navbar-brand">
+                    <img src="/assets/logo.png" class="img-fluid" width="80px" alt="logo">
+                </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                     <span class="navbar-toggler-icon"></span>
@@ -34,10 +35,10 @@
                             <a href="/" class="nav-link active" aria-current="page">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/about" class="nav-link">About</a>
+                            <a href="#about" class="nav-link">About</a>
                         </li>
                         
-                        {{#if logged_in}}
+                        {{!-- {{#if logged_in}} --}}
                         <li class="nav-item">
                             <a href="/project" class="nav-link">Projects</a>
                         </li>
@@ -46,14 +47,14 @@
                         </li>
 
                         
-                        {{#else}}
+                        {{!-- {{#else}} --}}
                         <li class="nav-item">
                             <a href="/login" class="nav-link">Login</a>
                         </li>
                         <li class="nav-item">
                             <a href="/signup" class="nav-link">Sign Up</a>
                         </li>
-                        {{/if}}
+                        {{!-- {{/if}} --}}
                     </ul>
                 </div>
             </div>
@@ -62,14 +63,6 @@
 
     <main>
         {{{ body }}}
-        <!-- paste to homepage -->
-        <!-- still figuring out how will the layout look like when it hits sm -->
-        <!-- about can't contain too many description. Maybe add a link to about? or it goes down the page -->
-
-        <!-- paste to login -->
-        <!-- image to be added -->
-
-
     </main>
 
     <footer class="p-5 bg-primary text-center text-light position-relative">
@@ -90,7 +83,6 @@
 <script src="/js/profile.js"></script>
 <script src="/js/login.js"></script>
 <script src="/js/signup.js"></script>
-<script src="/js/comment.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>

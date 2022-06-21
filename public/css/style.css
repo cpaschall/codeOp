@@ -1,12 +1,29 @@
+* {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}  
+
 /* hero section */
 #hero .container-fluid {
-    background-image: url("./assets/VennDia.png");
+    background-image: url("/assets/VennDia.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 70vh;
-  }
+}
 
-* {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}  
+/* divider 'or' in login */
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 3px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
