@@ -27,17 +27,10 @@
 (function () {
   function signup(event) {
     event.preventDefault();
-<<<<<<< HEAD
     const firstName = $("#first-name").val();
     const lastName = $("#last-name").val();
-=======
-    console.log("click")
-    const username = $("#signup-name").val();
->>>>>>> 43e91d34554d19c736041e58b53e7845348603c1
     const email = $("#signup-email").val();
     const password = $("#signup-password").val();
-    
-
 
     if (firstName && lastName && email && password) {
       // Send a POST request to the API endpoint
@@ -56,10 +49,5 @@
     }
   }
 
-<<<<<<< HEAD
-  $("#signup-form").on("submit", signup);
-})();
-=======
   $("#signup").on("submit", signup);
 })();
->>>>>>> 43e91d34554d19c736041e58b53e7845348603c1
