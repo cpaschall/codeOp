@@ -27,21 +27,21 @@
 (function () {
   function signup(event) {
     event.preventDefault();
-    const firstName = $("#first-name").val();
-    const lastName = $("#last-name").val();
+    const username = $("#username").val();
     const email = $("#signup-email").val();
     const password = $("#signup-password").val();
+    const skills = $("#skills").val();
 
-    if (firstName && lastName && email && password) {
+    if (username && email && password && skills) {
       // Send a POST request to the API endpoint
       const response = fetch("/api/users/signup", {
         method: "POST",
-        body: JSON.stringify({ name: username, email, password }),
+        body: JSON.stringify({ name: username, email, password, skills }),
         headers: { "Content-Type": "application/json" },
       })
         .then((data) => data.json())
         .then((response) => {
-          document.location.replace("/login");
+          document.location.replace("/profile");
         })
         .catch((err) => {
           alert("Err", err);
