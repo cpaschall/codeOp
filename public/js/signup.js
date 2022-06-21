@@ -31,7 +31,7 @@
     const email = $("#signup-email").val();
     const password = $("#signup-password").val();
 
-    const skills = $("#skills").val();
+    const skills = $(".form-check-input").val();
 
 
     if (username && email && password && skills) {
