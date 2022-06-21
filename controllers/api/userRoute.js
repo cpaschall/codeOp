@@ -27,7 +27,7 @@ router.post('/signup', async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll({
-      attributes: ["id", "name","email","password"],
+      attributes: ["id", "name","email","password", "skills"],
     });
     res.status(200).json(userData);
   } catch (error) {

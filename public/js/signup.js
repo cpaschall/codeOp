@@ -31,6 +31,7 @@
     const username = $("#signup-name").val();
     const email = $("#signup-email").val();
     const password = $("#signup-password").val();
+    // const skill = $
     
 
 
@@ -38,7 +39,7 @@
       // Send a POST request to the API endpoint
       const response = fetch("/api/users/signup", {
         method: "POST",
-        body: JSON.stringify({ name: username, email, password }),
+        body: JSON.stringify({ name: username, email, password, skill }),
         headers: { "Content-Type": "application/json" },
       })
         .then((data) => data.json())
