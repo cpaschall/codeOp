@@ -8,7 +8,8 @@ router.post('/signup', async (req, res) => {
     const userData = await User.create({
       name: req.body.name,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      skills: req.body.skills
     });
 
     req.session.save(() => {
@@ -40,7 +41,8 @@ router.put('/:id', withAuth, async (req, res) => {
     const userData = await User.update({
       name: req.body.name,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      skills: req.body.skills
     },
     {
       where: {

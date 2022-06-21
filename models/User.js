@@ -43,7 +43,7 @@ User.init(
       },
       set(val) {
           this.setDataValue('skills', val.join(', '));
-      }
+      },
     },
     // proj_own: {
     //   type: DataTypes.STRING,
