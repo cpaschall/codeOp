@@ -1,5 +1,5 @@
-<div class="container py-5 text-center">
-    <h1 class="mb-4">Project</h1>
+<div class="container py-5">
+    <h1 class="mb-4  text-center">Project</h1>
     <div class="row d-flex align justify-content-center h-100">
         <div class="card" style="max-width: 40rem;">
             <div class="card-body">
@@ -7,28 +7,51 @@
                     <div class="mb-4 mt-4">
                         <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="First name"
-                                    aria-label="First name">
-                            </div>
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                                <input type="text" class="form-control" placeholder="Username" aria-label="username">
                             </div>
                         </div>
 
                         <div class="mb-4 mt-4">
-                            <input type="email" class="form-control" placeholder="Enter your email address" id="email">
+                            <input type="email" class="form-control" placeholder="Email address" id="email">
                         </div>
                         <div class="mb-4">
                             <label for="project-content" class="form-label"></label>
-                            <textarea class="form-control" id="project-content" placeholder="Project details"
+                            <textarea class="form-control" id="project-content" placeholder="Project description"
                                 rows="3"></textarea>
                         </div>
-                        <div class="mb-3">
-                            <label for="project-content" class="form-label"></label>
-                            <textarea class="form-control" id="project-content" placeholder="Skills needed"
-                                rows="3"></textarea>
+                        <div class="form-check">
+                            <p>Select skills needed:</p>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                HTML
+                            </label>
                         </div>
-                        <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                CSS
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                JavaScript
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                MySql
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                React
+                            </label>
+                        </div>
+                        <div class="mb-3 d-flex align-items-center justify-content-center pb-4 pt-4">
+
                             {{#if id}}
                             <button id="update-post" type="submit" class="btn btn-primary">Update</button>
                             <button id="delete-post" type="submit" class="btn btn-danger">Delete</button>
