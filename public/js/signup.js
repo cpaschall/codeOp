@@ -27,9 +27,12 @@
 (function () {
   function signup(event) {
     event.preventDefault();
+    console.log("click")
     const username = $("#signup-name").val();
     const email = $("#signup-email").val();
     const password = $("#signup-password").val();
+    
+
 
     if (username && email && password) {
       // Send a POST request to the API endpoint
@@ -48,5 +51,5 @@
     }
   }
 
-  $("#signup-form").on("submit", signup);
+  $("#signup").on("submit", signup);
 })();
