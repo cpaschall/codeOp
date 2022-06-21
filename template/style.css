@@ -4,7 +4,7 @@
 
 /* hero section */
 #hero .container-fluid {
-  background-image: url("../assets/images/VennDia.png");
+  background-image: url("../assets/VennDia.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

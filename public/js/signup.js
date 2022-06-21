@@ -1,17 +1,17 @@
 // const signupFormHandler = async (event) => {
 //     event.preventDefault();
-  
+
 //     const name = document.querySelector('#signup-name').value.trim();
 //     const email = document.querySelector('#signup-email').value.trim();
 //     const password = document.querySelector('#signup-password').value.trim();
-  
+
 //     if (name && email && password) {
 //       const response = await fetch('/api/user', {
 //         method: 'POST',
 //         body: JSON.stringify({ name, email, password }),
 //         headers: { 'Content-Type': 'application/json' },
 //         });
-  
+
 //         if (response.ok) {
 //         document.location.replace('/dashboard');
 //         } else {
@@ -27,24 +27,25 @@
 (function () {
   function signup(event) {
     event.preventDefault();
-    console.log("click")
-    const username = $("#signup-name").val();
+    const username = $("#username").val();
     const email = $("#signup-email").val();
     const password = $("#signup-password").val();
-    // const skill = $
-    
+
+    const skills = $("#skills").val();
 
 
-    if (username && email && password) {
+    if (username && email && password && skills) {
       // Send a POST request to the API endpoint
       const response = fetch("/api/users/signup", {
         method: "POST",
-        body: JSON.stringify({ name: username, email, password, skill }),
+
+        body: JSON.stringify({ name: username, email, password, skills }),
+
         headers: { "Content-Type": "application/json" },
       })
         .then((data) => data.json())
         .then((response) => {
-          document.location.replace("/login");
+          document.location.replace("/profile");
         })
         .catch((err) => {
           alert("Err", err);
