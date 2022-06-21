@@ -3,13 +3,11 @@
         <div class="row text-primary gx-5 text-center">
             <div class="col">
                 <h3 class="p-5">Developers</h3>
-                {{#each user.name}}
+                {{#each user}}
                 <p>
-
-                    <!-- {{developer.id}}.
-                    {{developer.name}} -->
+                    {{user.id}}. {{user.name}}
                 </p>
-                <!-- {{/each}} -->
+                {{/each}}
 
             </div>
 
@@ -31,8 +29,12 @@
     </div>
 </hero>
 
+  <section id="about">
+
+  </section>
+
 <!-- Loop over each object in the projects array -->
-{{#each projects as |project| }}
+{{!-- {{#each projects as |project| }}
 <div class="row mb-4 project">
   <div class="col-md-5">
     <h2>
@@ -56,4 +58,4 @@
     </p>
   </div>
 </div>
-{{/each}}
+{{/each}} --}}
