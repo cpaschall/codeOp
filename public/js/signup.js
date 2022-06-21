@@ -26,8 +26,9 @@
 
 (function () {
   function signup(event) {
+    console.log("click")
     event.preventDefault();
-    const username = $("#username").val();
+    const username = $("#signup-name").val();
     const email = $("#signup-email").val();
     const password = $("#signup-password").val();
 
@@ -43,7 +44,7 @@
       })
         .then((data) => data.json())
         .then((response) => {
-          document.location.replace("/profile");
+          document.location.replace("/login");
         })
         .catch((err) => {
           alert("Err", err);
