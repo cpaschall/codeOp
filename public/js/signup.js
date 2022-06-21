@@ -38,9 +38,7 @@
       // Send a POST request to the API endpoint
       const response = fetch("/api/users/signup", {
         method: "POST",
-
         body: JSON.stringify({ name: username, email, password, skills }),
-
         headers: { "Content-Type": "application/json" },
       })
         .then((data) => data.json())
