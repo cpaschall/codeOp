@@ -1,28 +1,28 @@
 // const signupFormHandler = async (event) => {
 //     event.preventDefault();
 
-//     const name = document.querySelector('#signup-name').value.trim();
-//     const email = document.querySelector('#signup-email').value.trim();
-//     const password = document.querySelector('#signup-password').value.trim();
+//     const name = $('#username').value.trim();
+//     const email = $('#signup-email').value.trim();
+//     const password= $('#signup-password').value.trim();
+//     const skills = $(".form-check-input").val().trim();
 
-//     if (name && email && password) {
-//       const response = await fetch('/api/user', {
+//     if (name && email && password && skills) {
+//       const response = await fetch('/api/users/signup', {
 //         method: 'POST',
-//         body: JSON.stringify({ name, email, password }),
+//         body: JSON.stringify({ name, email, password, skills }),
 //         headers: { 'Content-Type': 'application/json' },
 //         });
 
 //         if (response.ok) {
-//         document.location.replace('/dashboard');
+//         document.location.replace('/profile');
 //         } else {
 //         alert(response.statusText);
 //         }
 //     }
 // };
 
-// document
-//   .querySelector('.signup-form')
-//   .addEventListener('submit', signupFormHandler);
+
+//   $('.signup-form').on('submit', signupFormHandler);
 
 (function () {
   function signup(event) {
