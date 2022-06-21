@@ -1,5 +1,5 @@
-<div class="container py-5 text-center">
-  <h1 class="mb-4">Sign Up</h1>
+<div class="container py-5">
+  <h1 class="mb-4 text-center">Sign Up</h1>
   <div class="row d-flex align justify-content-center h-100">
     <div class="card" style="max-width: 40rem;">
       <div class="card-body">
@@ -24,7 +24,48 @@
               <br>
               <input type="password" class="form-control" placeholder="Re-enter password" id="signup-password">
               <br>
-              <button id="signup-form" type="submit" class="btn btn-primary">Sign up</button>
+
+              <div class="form-check">
+                <p>Select your current skills:</p>
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  HTML
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  CSS
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  JavaScript
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  MySql
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  React
+                </label>
+              </div>
+              {{!-- apply conditional for checked boxes in js file --}}
+              {{!-- <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked">
+                  Checked checkbox
+                </label>
+              </div> --}}
+              <div class="d-flex align-items-center justify-content-center pb-4 pt-4">
+                <button id=" signup-form" type="submit" class="btn btn-primary" class="center">Sign up</button>
+              </div>
             </div>
         </form>
       </div>
