@@ -38,10 +38,7 @@ Project.init(
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
               },
-        proj_contr:{
-            type: DataTypes.BOOLEAN,
-                defaultValue: false
-        },
+
         user_id: {
             type: DataTypes.INTEGER,
             references: {
