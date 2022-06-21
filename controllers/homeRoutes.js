@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { json } = require('express');
 const { Project, User } = require('../models');
 
 const withAuth = require('../utils/helpers');
@@ -59,6 +60,22 @@ router.get("/signup", async (req, res) => {
   router.get("/project", async (req, res) => {
     return res.render("project");
   });
+
+  router.get('/test', async( req, res) => {
+    try {
+       const projectData = await Project.findAll({
+        include: [
+            {
+                model: "user",
+                attributes: []
+
+            }
+        ]
+       })
+    } catch (err) {
+        res.status(400).json(err);
+    }
+  })
 
 
 module.exports = router;
