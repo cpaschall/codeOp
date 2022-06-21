@@ -1,3 +1,36 @@
+<hero id="hero">
+    <div class="container-fluid d-sm-flex align-items-center justify-content-center">
+        <div class="row text-primary gx-5 text-center">
+            <div class="col">
+                <h3 class="p-5">Developers</h3>
+                {{#each user.name}}
+                <p>
+
+                    <!-- {{developer.id}}.
+                    {{developer.name}} -->
+                </p>
+                <!-- {{/each}} -->
+
+            </div>
+
+            <div class="col">
+                <h3 class="p-5">About codeOp</h3>
+            </div>
+
+            <div class="col">
+                <h3 class="p-5">Projects</h3>
+                <!-- {{#each project}} -->
+                <p>
+                    <!-- {{project.id}}
+                    {{project.proj_name}} -->
+                </p>
+                <!-- {{/each}} -->
+            </div>
+        </div>
+
+    </div>
+</hero>
+
 <!-- Loop over each object in the projects array -->
 {{#each projects as |project| }}
 <div class="row mb-4 project">
