@@ -2,12 +2,12 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector("#profile-name").value.trim();
-  const skills_offered = document.querySelector("#skills_offered").value.trim();
+  const skills = document.querySelector("#skills_offered").value.trim();
 
-  if (name && skills_offered) {
+ if (name && skills) {
     const response = await fetch(`/api/profile`, {
       method: "POST",
-      body: JSON.stringify({ name, skills_offered }),
+      body: JSON.stringify({ name, skills }),
       headers: {
         "Content-Type": "application/json",
       },
