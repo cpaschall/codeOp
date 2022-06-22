@@ -121,4 +121,8 @@ router.post('/logout', (req, res) =>{
   }
 });
 
+router.get('/showUsers', (req, res) => {
+  res.send(User.findAll())
+})
+
 module.exports = router;

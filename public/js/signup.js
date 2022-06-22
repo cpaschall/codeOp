@@ -5,7 +5,7 @@
     const username = $("#signup-name").val();
     const email = $("#signup-email").val();
     const password = $("#signup-password").val();
-
+    
     const skills = $(".form-check-input:checked");
 
     const newArray = [];
@@ -39,3 +39,4 @@
 
   $("#signup").on("submit", signup);
 })();
+
