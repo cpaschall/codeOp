@@ -15,7 +15,7 @@
 //     });
 
 //     if (response.ok) {
-//       document.location.replace("/project");
+//       document.location.replace("/projectDisplay");
 //     } else {
 //       alert("Failed to create project");
 //     }
@@ -53,14 +53,14 @@
 
     if (title && content) {
       // Send a POST request to the API endpoint
-      const response = fetch("/api/project/", {
+      const response = fetch("/api/projects", {
         method: "POST",
         body: JSON.stringify({ title, content }),
         headers: { "Content-Type": "application/json" },
       })
         .then((data) => data.json())
         .then((response) => {
-          document.location.replace("/dashboard");
+          document.location.replace("/");
         })
         .catch((err) => {
           alert("Err", err);
@@ -68,8 +68,8 @@
     }
   }
 
-  $("#new-post").on("click", newProject);
-})();
+//   $("#new-post").on("click", newProject);
+// })();
 
 (function () {
   function updatePost(event) {
@@ -121,8 +121,8 @@
   $("#delete-post").on("click", deletePost);
 })();
 
-(function () {
-  function displayPosts() {
-    const
-  }
-})
+// (function () {
+//   function displayPosts() {
+//     const
+//   }
+// })
