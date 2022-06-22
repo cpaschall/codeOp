@@ -6,19 +6,20 @@
     const email = $("#signup-email").val();
     const password = $("#signup-password").val();
 
-    const skills = $("#skill-check");
+    const skills = $(".form-check-input:checked");
 
-const newArray = [];
-$('input:checkbox:checked').each(function () {
+    const newArray = [];
+    skills.each(index => newArray.push(skills[index].name))
+    console.log(newArray);
+// $('input:checkbox:checked').each(function () {
 
-  if ($('input:checkbox:checked')) {
-      newArray.push(skills.push($(this).val()));
-  } else {
-      newArray.push([]);
+//   if ($('input:checkbox:checked')) {
+//       newArray.push(skills.push($(this).val()));
+//   } else {
+//       newArray.push([]);
 
-  }
-  console.log(newArray);
-});
+//   }
+
     if (username && email && password && skills) {
       // Send a POST request to the API endpoint
       const response = fetch("/api/users/signup", {
