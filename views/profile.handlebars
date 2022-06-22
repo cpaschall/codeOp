@@ -1,4 +1,3 @@
-<!-- paste to profile -->
 <section class="vh-100">
     <div class="container rounded my-5">
         <div class="row">
@@ -6,7 +5,7 @@
                 <!-- photo rounded frame -->
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
                     <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="profile picture">
-                    <span class="font-weight-bold">{{user.name}}</span>
+                    <span class="font-weight-bold" id="profile-name">{{user.name}}</span>
                     <span class="text-black-50">{{user.email}}</span>
                 </div>
                 <!-- users bio -->
@@ -14,6 +13,13 @@
                     <h4>My Bio:</h4>
                     <p>
                         This will be left blank for now.
+                    </p>
+                </div>
+
+                    <div class="d-flex flex-column p-3">
+                    <h3>Github:</h3>
+                    <p>
+                        {{project.proj_repo}}
                     </p>
                 </div>
             </div>
@@ -25,18 +31,20 @@
 
                     <div class="card text-white mb-3" style="background-color: #719BFD;">
                         <p class="card-text">
-                            This will be left blank for now. Needed users data here
+                            This will be left blank for now. Needs users' data profile
                         </p>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center mt-3">
-                        <h4 class="text-right">Languages:</h4>
+                        <h4 class="text-right">Skills:</h4>
                     </div>
 
                     {{!-- this will be needed to looped over with user's language data which doesn't exist at the moment --}}
                     <div class="card" id="language-list">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Cras justo odio</li>
+                            {{#each user.skills}}
+                            <li class="list-group-item">{{this}}</li>
+                            {{/each}}
                         </ul>
                     </div>
 
@@ -46,11 +54,11 @@
 
                     <div class="card" id="project-list">
                         <ul class="list-group list-group-flush">
-                            {{!-- {{#each projects as |project|}} --}}
+                            {{#each project}}
                             <li class="list-group-item">
-                                <a href="#" class="text-dark">{{project.user.}}</a>
+                                <a href="#" class="text-dark">{{project.proj_name}}</a>
                             </li>
-                            {{!-- {{/each}} --}}
+                            {{/each}}
                         </ul>
                     </div>
 
