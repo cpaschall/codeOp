@@ -6,13 +6,13 @@
     const email = $("#signup-email").val();
     const password = $("#signup-password").val();
 
-    const skills = $(".form-check-input").val();
+    const skills = $("#skill-check");
 
 const newArray = [];
-$('input:checkbox:checked').map(function () {
-  const cb = skills;
+$('input:checkbox:checked').each(function () {
+
   if ($('input:checkbox:checked')) {
-      newArray.push(cb.split(','));
+      newArray.push(skills.push($(this).val()));
   } else {
       newArray.push([]);
 
