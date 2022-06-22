@@ -4,7 +4,7 @@ const editProfileHandler = async (event) => {
 
     const name = document.querySelector("#edit-name").value.trim();
     const email = document.querySelector("edit-email").value.trim();
-    const skills = document.querySelector("#skills").value.trim();
+    const skills = document.querySelector("#skills-check").value.trim();
 
 
     if (name && email && skills) {
