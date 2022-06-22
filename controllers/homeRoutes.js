@@ -5,7 +5,7 @@ const { Project, User } = require('../models');
 const withAuth = require('../utils/helpers');
 
 
-router.get('/projectDisplay', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const projectData = await Project.findAll({
             include: [
@@ -22,7 +22,7 @@ router.get('/projectDisplay', async (req, res) => {
         //     projects,
         //     logged_in: req.session.logged_in
         // });
-        res.render('projectDisplay', projects)
+        res.render('homepage')
       
     } catch (err) {
         res.statusMessage(500).json(err);
