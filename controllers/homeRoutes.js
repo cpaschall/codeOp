@@ -18,10 +18,12 @@ router.get('/', async (req, res) => {
 
         const projects = projectData.map((project) => project.get({ plain: true }));
 
-        res.render('homepage', {
-            projects,
-            logged_in: req.session.logged_in
-        });
+        // res.render('projectDisplay', {
+        //     projects,
+        //     logged_in: req.session.logged_in
+        // });
+        res.render('homepage')
+      
     } catch (err) {
         res.statusMessage(500).json(err);
     }
@@ -60,6 +62,8 @@ router.get("/signup", async (req, res) => {
   router.get("/project", async (req, res) => {
     return res.render("project");
   });
+
+
 
   router.get('/test', async( req, res) => {
     try {
