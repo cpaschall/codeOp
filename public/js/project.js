@@ -120,3 +120,9 @@
 
   $("#delete-post").on("click", deletePost);
 })();
+
+(function () {
+  function displayPosts() {
+    const
+  }
+})
