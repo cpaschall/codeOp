@@ -22,6 +22,8 @@ router.post('/', withAuth, async (req,res) =>{
         if (req.session){
             const commentPost = await Comment.create({
                 commentData: req.body.commentData,
+                project_id: req.body.project_id,
+                user_id: req.session.user_id
             })
             res.status(200).json(commentPost);
         } 
@@ -30,5 +32,22 @@ router.post('/', withAuth, async (req,res) =>{
         res.status(400).json(err);
     }
 })
-
+// router.post('/:id/comment', withAuth, async (req, res) => {
+//     try {
+//         if (req.body.content) {
+//             const commentsData = await Comments.create({
+//                 commentData: req.body.commentData,
+//                 project_id: req.body.project_id,
+//                 user_id: req.session.user_id,
+//             });
+//             res.status(200).json(commentsData);
+//         }
+//         else {
+//             res.status(404).json({ message: "Error! Can't comment." });
+//         }
+//     }
+//     catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 module.exports = router;

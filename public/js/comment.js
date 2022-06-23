@@ -12,6 +12,7 @@ async function commentFormHandler(event) {
             method: 'POST',
             body: JSON.stringify({
                 commentData
+               
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -19,7 +20,9 @@ async function commentFormHandler(event) {
         });
 
         if (response.ok) {
+            console.log("comment created")
             document.location.reload();
+            
         } else {
             alert(response.statusText);
         }
@@ -27,4 +30,4 @@ async function commentFormHandler(event) {
     
 }
 
-document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
+$('.comment-form').on('submit', commentFormHandler);

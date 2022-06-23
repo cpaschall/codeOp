@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { Project, User } = require('../models');
+const { Project, User, Comment } = require('../models');
 
 const withAuth = require('../utils/helpers');
 
@@ -104,7 +104,12 @@ router.get("/project", async (req, res) => {
                 {
                     model: User,
                     attributes: ['name']
+                    
                 },
+                {
+                    model: Comment,
+                    attributes:['commentData']
+                }
             ],
     });
 
