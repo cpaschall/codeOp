@@ -51,29 +51,30 @@ router.get("/signup", async (req, res) => {
   });
 
 router.get("/project", async (req, res) => {
-    try{
-        const projectData = await Project.findAll({
-            attributes: ["proj_name", "summary"],
-            // include: [
-            //     {
-            //         model: User,
-            //         attributes: ['name']
-            //     },
-            // ],
-        });
-        console.log(projectData)
+    res.render('project')
+    // try{
+    //     const projectData = await Project.findAll({
+    //         // attributes: ["proj_name", "summary", "language", "proj_repo"],
+    //         include: [
+    //             {
+    //                 model: User,
+    //                 attributes: ['name']
+    //             },
+    //         ],
+    //     });
+    //     console.log(projectData)
     
-        const projects = projectData.map((project) => project.get({ plain: true }));
-        console.log(projects)
-        // return res.status(200).json(projects);
-        return res.render('project', {
-            projects,
-            logged_in: true,
-            project_page: true
-        })
-    } catch (err) {
-        res.status(400).json(err)
-    }
+    //     const projects = projectData.map((project) => project.get({ plain: true }));
+    //     console.log(projects)
+    //     return res.status(200).json(projects);
+    //     return res.render('project', {
+    //         projects,
+    //         logged_in: true,
+    //         project_page: true
+    //     })
+    // } catch (err) {
+    //     res.status(400).json(err)
+    // }
     
 });
 
@@ -95,11 +96,12 @@ router.get("/project", async (req, res) => {
 //     }
 //   })
 
-  router.get('/projectDisplay', withAuth, async (req, res) => {
+  router.get('/projectDisplay', async (req, res) => {
     console.log("inside project diplay route")
     try {
-        const projectData = await Project.findAll(
-            {
+
+        const projectData = await Project.findAll({
+
                 include: [
                 {
                     model: User,
@@ -110,6 +112,7 @@ router.get("/project", async (req, res) => {
                     model: Comment,
                     attributes:['commentData']
                 }
+
             ],
     });
 
