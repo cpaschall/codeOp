@@ -1,17 +1,16 @@
 async function commentFormHandler(event) {
     event.preventDefault();
 
-    const commentData = document.querySelector('textarea[name="comment-body"]').value.trim();
+    const commentData =$('textarea[name="comment-body"]').val().trim();
 
-    const project_id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-    ];
+    // const project_id = window.location.toString().split('/')[
+    //     window.location.toString().split('/').length - 1
+    // ];
 
     if (commentData) {
         const response = await fetch('/api/comments', {
             method: 'POST',
             body: JSON.stringify({
-                project_id,
                 commentData
             }),
             headers: {
@@ -27,4 +26,4 @@ async function commentFormHandler(event) {
     }
 }
 
-$('#comment-form').on('submit', commentFormHandler);
+$('#commentbutton').on('submit', commentFormHandler);

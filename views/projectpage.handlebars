@@ -5,7 +5,7 @@
                 <h2>Project Dashboard</h2>
             </div>
 
-            
+
             <div class="col mt-2 d-md-flex justify-content-md-end">
                 {{#if logged_in}}
                 <a href="/project" class="btn btn-success text-dark btn-lg">Post a project</a>
@@ -13,9 +13,9 @@
                 <a href="/login" class="btn btn-success text-dark btn-lg">Post a project</a>
                 {{/if}}
             </div>
-            
+
         </div>
-        
+
         {{#each projects as |project|}}
         <div class="row m-4">
             <h4>{{project.proj_name}}</h4>
@@ -29,25 +29,30 @@
                             <h5>Posted by {{user.name}}</h5>
                             <p class="mb-0">
 
-                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
                                     {{project.summary}}
                                 </button>
                             </p>
                         </div>
 
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion">
                             <div class="card-body">
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
-                                        {{project.comment.length}}
+                                        {{comment.commentData}}
                                     </li>
                                 </ul>
 
                                 <div class="d-md-flex justify-content-md-end">
-                                    <button class="btn btn-primary me-md-2" type="submit">Add a comment</button>
+                                      
+                                    <button class="btn btn-primary me-md-2" id ='commentbutton'type="submit">Add a comment</button>
                                 </div>
+
                             </div>
-                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -78,4 +83,7 @@
         {{/each}}
 
     </div>
+
+  
+
 </section>

@@ -7,8 +7,8 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector("#profile-name").value.trim();
-  const skills = document.querySelector("#skills_offered").value.trim();
+  const name = $("#profile-name").val();
+  const skills = $("#skills_offered").val();
 
  if (name && skills) {
     const response = await fetch(`/api/profile`, {
