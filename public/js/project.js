@@ -1,27 +1,36 @@
-// const newFormHandler = async (event) => {
-//   event.preventDefault();
+console.log("Project works")
+const newProjHandler = async (event) => {
+  event.preventDefault();
+  console.log(event)
 
-//   const name = document.querySelector("#project-name").value.trim();
-//   const project_skills = document.querySelector("#project-skills").value.trim();
-//   const description = document.querySelector("#project-desc").value.trim();
+  const title = $("#post-title").val()
+  const content = $("#post-content").val()
+  // const skills = $(".form-check:checked");
 
-//   if (name && project_skills && description) {
-//     const response = await fetch(`/api/projects`, {
-//       method: "POST",
-//       body: JSON.stringify({ name, project_skills, description }),
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//     });
 
-//     if (response.ok) {
-//       document.location.replace("/projectDisplay");
-//     } else {
-//       alert("Failed to create project");
-//     }
-//   }
-// };
+  // const newArray = [];
+  // skills.each(index => newArray.push(skills[index].name))
+  // console.log(newArray);
 
+  if (title && content ) {
+    const response = await fetch(`/api/projects`, {
+      method: "POST",
+      body: JSON.stringify({ proj_name: title, summary: content}),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (response.ok) {
+      // document.location.replace("/projectDisplay");
+      console.log("project created")
+    } else {
+      alert("Failed to create project");
+    }
+  }
+};
+console.log($("#project-form").length)
+$("#project-form").on("submit", newProjHandler)
 // const delButtonHandler = async (event) => {
 //   if (event.target.hasAttribute("data-id")) {
 //     const id = event.target.getAttribute("data-id");
@@ -45,81 +54,82 @@
 // document
 //   .querySelector(".project-list")
 //   .addEventListener("click", delButtonHandler);
-(function () {
-  function newProject(event) {
-    event.preventDefault();
-    const title = $("#post-title").val();
-    const content = $("#post-content").val();
+// (function () {
+//   function newProject(event) {
+//     event.preventDefault();
+//     const title = $("#post-title").val();
+//     const content = $("#post-content").val();
 
-    if (title && content) {
-      // Send a POST request to the API endpoint
-      const response = fetch("/api/projects", {
-        method: "POST",
-        body: JSON.stringify({ title, content }),
-        headers: { "Content-Type": "application/json" },
-      })
-        .then((data) => data.json())
-        .then((response) => {
-          document.location.replace("/");
-        })
-        .catch((err) => {
-          alert("Err", err);
-        });
-    }
-  }
+//     if (title && content) {
+//       // Send a POST request to the API endpoint
+//       const response = fetch("/api/projects", {
+//         method: "POST",
+//         body: JSON.stringify({ title, content }),
+//         headers: { "Content-Type": "application/json" },
+//       })
+//         .then((data) => data.json())
+//         .then((response) => {
+//           document.location.replace("/");
+//         })
+//         .catch((err) => {
+//           alert("Err", err);
+//         });
+//     }
+//   }
+// })
 
 //   $("#new-post").on("click", newProject);
 // })();
 
-(function () {
-  function updatePost(event) {
-    event.preventDefault();
-    const id = $("#post-id").val();
-    const title = $("#post-title").val();
-    const content = $("#post-content").val();
+// (function () {
+//   function updatePost(event) {
+//     event.preventDefault();
+//     const id = $("#post-id").val();
+//     const title = $("#post-title").val();
+//     const content = $("#post-content").val();
 
-    if (id && title && content) {
-      // Send a POST request to the API endpoint
-      const response = fetch(`/api/projects/${id}`, {
-        method: "PUT",
-        body: JSON.stringify({ id, title, content }),
-        headers: { "Content-Type": "application/json" },
-      })
-        .then((data) => data.json())
-        .then((response) => {
-          document.location.replace("/dashboard");
-        })
-        .catch((err) => {
-          alert("Err", err);
-        });
-    }
-  }
+//     if (id && title && content) {
+//       // Send a POST request to the API endpoint
+//       const response = fetch(`/api/projects/${id}`, {
+//         method: "PUT",
+//         body: JSON.stringify({ id, title, content }),
+//         headers: { "Content-Type": "application/json" },
+//       })
+//         .then((data) => data.json())
+//         .then((response) => {
+//           document.location.replace("/dashboard");
+//         })
+//         .catch((err) => {
+//           alert("Err", err);
+//         });
+//     }
+//   }
 
-  $("#edit-post").on("click", updatePost);
-})();
+//   $("#edit-post").on("click", updatePost);
+// })();
 
-(function () {
-  function deletePost(event) {
-    event.preventDefault();
-    const id = $("#post-id").val();
-    if (id) {
-      // Send a POST request to the API endpoint
-      const response = fetch(`/api/projects/${id}`, {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-      })
-        .then((data) => data.json())
-        .then((response) => {
-          document.location.replace("/dashboard");
-        })
-        .catch((err) => {
-          alert("Err", err);
-        });
-    }
-  }
+// (function () {
+//   function deletePost(event) {
+//     event.preventDefault();
+//     const id = $("#post-id").val();
+//     if (id) {
+//       // Send a POST request to the API endpoint
+//       const response = fetch(`/api/projects/${id}`, {
+//         method: "DELETE",
+//         headers: { "Content-Type": "application/json" },
+//       })
+//         .then((data) => data.json())
+//         .then((response) => {
+//           document.location.replace("/dashboard");
+//         })
+//         .catch((err) => {
+//           alert("Err", err);
+//         });
+//     }
+//   }
 
-  $("#delete-post").on("click", deletePost);
-})();
+//   $("#delete-post").on("click", deletePost);
+// })();
 
 // (function () {
 //   function displayPosts() {

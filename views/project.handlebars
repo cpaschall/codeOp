@@ -12,14 +12,14 @@
                         </div>
 
                         <div class="mb-4 mt-4">
-                            <input type="email" class="form-control" placeholder="Email address" id="email">
+                            <input type="text" id="post-title" class="form-control" placeholder="Title">
                         </div>
                         <div class="mb-4">
-                            <label for="project-content" class="form-label"></label>
-                            <textarea class="form-control" id="project-content" placeholder="Project description"
+                            <label for="post-content" id="post-content-label" class="form-label"></label>
+                            <textarea class="form-control" id="post-content" placeholder="Project description"
                                 rows="3"></textarea>
                         </div>
-                        <div class="form-check">
+                        {{!-- <div class="form-check skill-check">
                             <p>Select skills needed:</p>
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
@@ -49,21 +49,35 @@
                             <label class="form-check-label" for="flexCheckDefault">
                                 React
                             </label>
-                        </div>
+                        </div> --}}
                         <div class="mb-3 d-flex align-items-center justify-content-center pb-4 pt-4">
 
-                            {{#if id}}
+                            {{!-- {{#if id}}
                             <button id="update-post" type="submit" class="btn btn-primary">Update</button>
-                            <button id="delete-post" type="submit" class="btn btn-danger">Delete</button>
-                            {{else}}
-                            <button class="mt-2 btn btn-primary btn-lg">Submit</button>
-                            {{/if}}
+                            <button id="delete-post" type="submit" class="btn btn-danger">Delete</button> --}}
+                            {{!-- {{else}} --}}
+                            <button type="submit" class="mt-2 btn btn-primary btn-lg" id="subProj">Submit</button>
+                            {{!-- {{/if}} --}}
                         </div>
                 </form>
 
             </div>
-            </form>
+            
         </div>
     </div>
 </div>
+</div>
+<div>
+
+    {{#each projects as |project|}}
+    <div class="all-projects">
+        <div class="card project-card">
+            <h3>{{project.proj_name}}</h3>
+            <p>{{project.summary}}</p>
+            <div class="languages-needed">
+                {{!-- <h5>Languages needed: {{project.language}}</h5> --}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
 </div>
