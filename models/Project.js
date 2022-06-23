@@ -23,17 +23,27 @@ Project.init(
     },
     language: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true, //needs to be flase
       get() {
+        const val = this.getDataValue("language");
+
+        if(typeof val === 'undefined' || val === null) {
+          return []
+        } else {
         return this.getDataValue("language").split(", ");
+        }
       },
       set(val) {
+        if(typeof val === 'undefined' || val === null) {
+          this.setDataValue('language', "")
+        } else {
         this.setDataValue("language", val.join(", "));
-      },
+        }
+      }
     },
     proj_repo: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true, //false
       validate: URL,
     },
     proj_owned: {

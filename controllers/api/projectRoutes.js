@@ -11,8 +11,11 @@ router.post('/', withAuth, async (req, res) => {
           user_id: req.session.user_id
            
         });
-        res.status(200).json(newProject);
+        console.log(newProject)
+        res.status(200).json(newProject)
+
     } catch (err) {
+        console.log(err)
         res.status(400).json(err)
     }
 });
