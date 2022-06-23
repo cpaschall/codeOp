@@ -95,29 +95,29 @@ router.get("/project", async (req, res) => {
 //     }
 //   })
 
-//   router.get('/projectDisplay', async (req, res) => {
-//     console.log("inside project diplay route")
-//     try {
-//         const projectData = await Project.findAll({
-//             include: [
-//                 {
-//                     model: User,
-//                     attributes: ['name']
-//                 },
-//             ],
-//         });
+  router.get('/projectDisplay', withAuth, async (req, res) => {
+    console.log("inside project diplay route")
+    try {
+        const projectData = await Project.findAll(
+            // include: [
+            //     {
+            //         model: User,
+            //         attributes: ['name']
+            //     },
+            // ],
+        );
 
-//         const projects = projectData.map((project) => project.get({ plain: true }));
-//         console.log(projects)
-//         // res.render('projectDisplay', {
-//         //     projects,
-//         //     logged_in: req.session.logged_in
-//         // });
-//         res.render('projectDisplay', projects)
+        const projects = projectData.map((project) => project.get({ plain: true }));
+        console.log(projects)
+        res.render('projectDisplay', {
+            projects,
+            logged_in: req.session.logged_in
+        });
+        // res.render('projectDisplay', projects)
       
-//     } catch (err) {
-//         res.statusMessage(500).json(err);
-//     }
-// });
+    } catch (err) {
+        res.statusMessage(500).json(err);
+    }
+});
 
 module.exports = router;
