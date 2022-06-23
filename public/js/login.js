@@ -60,5 +60,25 @@
   $("#login-form").on("click", login);
 })();
 
+(function () {
+  function logout() {
+    console.log("click")
+    const response = fetch("/api/users/logout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((data) => {
+        if (data.ok) {
+          sessionStorage.removeItem("user");
+          document.location.replace("/");
+        }
+      })
+
+      .catch((err) => {
+        alert("Err", err);
+      });
+  }
+  $("#logout-link").on("click", logout);
+})();
 
 
