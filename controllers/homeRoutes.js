@@ -109,7 +109,7 @@ router.get("/project", async (req, res) => {
 
         const projects = projectData.map((project) => project.get({ plain: true }));
         console.log(projects)
-        res.render('projectDisplay', {
+        res.render('projectpage', {
             projects,
             logged_in: req.session.logged_in
         });
