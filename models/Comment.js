@@ -13,14 +13,14 @@ Comment.init(
         },
         commentData:{
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: {
                 len: [1]
             }
         },
         user_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             references: {
                 model: 'user',
                 key: 'id'
@@ -28,7 +28,7 @@ Comment.init(
         },
         project_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             references: {
                 model: 'project',
                 key: 'id'

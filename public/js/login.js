@@ -52,7 +52,7 @@
           document.location.replace("/project");
         })
         .catch((err) => {
-          res.status(400).json("Err", err);
+          response.status(400).json("Err", err);
         });
     }
   }
