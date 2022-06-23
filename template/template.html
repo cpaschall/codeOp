@@ -280,8 +280,78 @@
             </div>
         </section>
 
-        <section>
-            
+        <!-- display projects page -->
+        <section class="vh-100">
+            <div class="container">
+                <div class="row">
+                    <div class=" col page-header">
+                        <h2>Project Dashboard</h2>
+                    </div>
+                    <div class="col mt-2 d-md-flex justify-content-md-end">
+                        <a href="/project" class="btn btn-success text-dark btn-lg">Post a project</a>
+                    </div>
+                </div>
+                <div class="row m-4">
+                    <h4>Project title</h4>
+                    <hr>
+
+                    <!-- project card -->
+                    <div class="col-md-8">
+                        <div class="accordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5>Posted by name on</h5>
+                                    <p class="mb-0">
+        
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa fugit dolores est nihil repellendus accusamus dolore quia obcaecati. Debitis quia magni doloremque assumenda eius repellendus amet dolor voluptatem hic quod.
+                                        </button>
+                                    </p>
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                Commenter name: <br>
+                                                I would love join!!!!
+                                            </li>
+                                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                                            <li class="list-group-item">Vestibulum at eros</li>
+                                        </ul>
+
+                                        <div class="d-md-flex justify-content-md-end">
+                                            <button class="btn btn-primary me-md-2" type="submit">Add a comment</button>
+                                        </div>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- skills needed card -->
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-header">
+                                Skills needed:
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Cras justo odio</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                            <button class="btn btn-primary btn-md me-md-2 mt-2" type="submit">Apply</button>
+                        </div>
+                    </div>
+                    <!-- favorite icons -->
+                    <div class="col-md-1">
+                        <button type="button" id="star-fav" class="btn btn-default" onclick="">
+                            <span class="fa fa-star fa-lg" style="color:#FF8E31"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </section>
 
         
