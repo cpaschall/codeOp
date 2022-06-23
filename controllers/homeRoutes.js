@@ -99,13 +99,14 @@ router.get("/project", async (req, res) => {
     console.log("inside project diplay route")
     try {
         const projectData = await Project.findAll(
-            // include: [
-            //     {
-            //         model: User,
-            //         attributes: ['name']
-            //     },
-            // ],
-        );
+            {
+                include: [
+                {
+                    model: User,
+                    attributes: ['name']
+                },
+            ],
+    });
 
         const projects = projectData.map((project) => project.get({ plain: true }));
         console.log(projects)
