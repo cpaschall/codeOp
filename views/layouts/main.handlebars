@@ -44,7 +44,7 @@
                             <a href="/project" class="nav-link">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/logout" class="nav-link">Logout</a>
+                            <a href="/logout" class="nav-link" id="logout-link">Logout</a>
                         </li>
 
                         {{else}}
@@ -78,10 +78,10 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-{{!-- {{#if project_page}} --}}
+<script src="/js/comment.js"></script>
+{{#if project_page}}
 <script src="/js/project.js"></script>
-{{!-- {{/if}} --}}
+{{/if}}
 <script src="/js/profile.js"></script>
 <script src="/js/login.js"></script>
 <script src="/js/signup.js"></script>

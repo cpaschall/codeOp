@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { Project, User } = require('../models');
+const { Project, User, Comment } = require('../models');
 
 const withAuth = require('../utils/helpers');
 
@@ -99,12 +99,20 @@ router.get("/project", async (req, res) => {
   router.get('/projectDisplay', async (req, res) => {
     console.log("inside project diplay route")
     try {
+
         const projectData = await Project.findAll({
+
                 include: [
                 {
                     model: User,
                     attributes: ['name']
+                    
                 },
+                {
+                    model: Comment,
+                    attributes:['commentData']
+                }
+
             ],
     });
 

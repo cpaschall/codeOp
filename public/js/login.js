@@ -1,13 +1,14 @@
-// const loginFormHandler = async (event) => {
+// const login = async (event) => {
+// console.log("clicked");
 //     event.preventDefault();
   
 //     // Collect values from the login form
-//     const email = document.querySelector('#login-email').value.trim();
-//     const password = document.querySelector('#login-password').value.trim();
+//     const email = $('#login-email').val();
+//     const password = $('#login-password').val();
   
 //     if (email && password) {
 //       // Send a POST request to the API endpoint
-//       const response = await fetch('/api/user/login', {
+//       const response = await fetch('/api/users/login', {
 //         method: 'POST',
 //         body: JSON.stringify({ email, password }),
 //         headers: { 
@@ -17,16 +18,19 @@
   
 //       if (response.ok) {
 //         // If successful, redirect the browser to the profile page
-//         document.location.replace('/dashboard');
+// const { user } = response;
+// const { id, email, name } = user;
+// sessionStorage.setItem("user", JSON.stringify({ id, email, name }));
+
+//         document.location.replace('/project');
+
 //       } else {
 //         alert(response.statusText);
 //       }
 //     }
 // };
   
-// document
-//     .querySelector('.login-form')
-//     .addEventListener('submit', loginFormHandler);
+// $('.login-form').on('submit', login);
 
 (function () {
   function login() {
@@ -52,7 +56,7 @@
           document.location.replace("/project");
         })
         .catch((err) => {
-          response.status(400).json("Err", err);
+          response.json("Err", err);
         });
     }
   }
@@ -60,5 +64,25 @@
   $("#login-form").on("click", login);
 })();
 
+(function () {
+  function logout() {
+    console.log("click")
+    const response = fetch("/api/users/logout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((data) => {
+        if (data.ok) {
+          sessionStorage.removeItem("user");
+          document.location.replace("/");
+        }
+      })
+
+      .catch((err) => {
+        alert("Err", err);
+      });
+  }
+  $("#logout-link").on("click", logout);
+})();
 
 
