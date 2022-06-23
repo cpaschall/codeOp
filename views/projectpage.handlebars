@@ -41,14 +41,26 @@
                             <div class="card-body">
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
-                                        {{comment.commentData}}
+                                
+                                        <form class="comment-form">
+                                            <div>
+                                                <textarea name="comment-body"></textarea>
+                                            </div>
+
+                                            <div>
+                                                <button type="submit">add comment</button>
+                                            </div>
+                                        </form>
+                                        {{comment}}
+
                                     </li>
                                 </ul>
 
-                                <div class="d-md-flex justify-content-md-end">
-                                      
-                                    <button class="btn btn-primary me-md-2" id ='commentbutton'type="submit">Add a comment</button>
-                                </div>
+                                {{!-- <div class="d-md-flex justify-content-md-end">
+
+                                    <button class="btn btn-primary me-md-2" id='commentbutton' type="submit">Add a
+                                        comment</button>
+                                </div> --}}
 
                             </div>
                         </div>
@@ -84,6 +96,7 @@
 
     </div>
 
-  
+
 
 </section>
+<script src="/js/comment.js"></script>

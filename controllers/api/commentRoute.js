@@ -9,7 +9,7 @@ const withAuth = require('../../utils/helpers');
 router.get("/", async (req, res) => {
     try{
      const commentData = await Comment.findAll({
-      attributes:['id','commentData','user_id','project_id']
+      attributes:['commentData']
      });
      res.status(200).json(commentData);
     }catch(err){
