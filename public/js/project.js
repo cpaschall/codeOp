@@ -22,7 +22,7 @@ const newProjHandler = async (event) => {
     });
 
     if (response.ok) {
-      // document.location.replace("/projectDisplay");
+      document.location.replace("/projectDisplay");
       console.log("project created")
     } else {
       alert("Failed to create project");
