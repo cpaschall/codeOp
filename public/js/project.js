@@ -5,17 +5,17 @@ const newProjHandler = async (event) => {
 
   const title = $("#post-title").val()
   const content = $("#post-content").val()
-  // const skills = $(".form-check:checked");
+  const skills = $(".form-check-input[name='skill']:checked");
 
 
-  // const newArray = [];
-  // skills.each(index => newArray.push(skills[index].name))
-  // console.log(newArray);
+  const newArray = [];
+  skills.each(index => newArray.push(skills[index].value))
+  console.log(newArray);
 
   if (title && content ) {
     const response = await fetch(`/api/projects`, {
       method: "POST",
-      body: JSON.stringify({ proj_name: title, summary: content}),
+      body: JSON.stringify({ proj_name: title, summary: content, language: newArray}),
       headers: {
         "Content-Type": "application/json",
       },
