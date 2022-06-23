@@ -6,7 +6,6 @@ const newProjHandler = async (event) => {
   const title = $("#post-title").val()
   const content = $("#post-content").val()
   const skills = $(".form-check-input[name='skill']:checked");
-  const repo = $("#repo-link").val();
 
 
   const newArray = [];
@@ -16,7 +15,7 @@ const newProjHandler = async (event) => {
   if (title && content ) {
     const response = await fetch(`/api/projects`, {
       method: "POST",
-      body: JSON.stringify({ proj_name: title, summary: content, language: newArray, proj_repo: repo}),
+      body: JSON.stringify({ proj_name: title, summary: content, language: newArray}),
       headers: {
         "Content-Type": "application/json",
       },

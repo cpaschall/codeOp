@@ -95,7 +95,7 @@ router.get("/project", async (req, res) => {
 //     }
 //   })
 
-  router.get('/projectDisplay', async (req, res) => {
+  router.get('/projectDisplay', withAuth, async (req, res) => {
     console.log("inside project diplay route")
     try {
         const projectData = await Project.findAll(
