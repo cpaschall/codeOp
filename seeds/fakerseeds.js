@@ -13,6 +13,7 @@ const createRandomProject = () => {
 
     for(var i = 0; i <= 5; i++) {
         let randProj = {
+
             id: i+1,
             proj_name: faker.music.songName(),
             summary: faker.company.catchPhrase(),
@@ -21,15 +22,16 @@ const createRandomProject = () => {
         allProjects.push(randProj)
     }
     return allProjects
-    console.log(allProjects)
 };
 
 const createRandomUser = () => {
     // let randNum = Math.floor(Math.random() * skills.length);
 
+
     for(var i = 0; i < 5; i++) {
         let randUser = {
             id: i+1,
+
             name: faker.internet.userName(),
             email: faker.internet.email(),
             password: faker.internet.password(),
@@ -48,16 +50,20 @@ const createRandomUser = () => {
     //     proj_id: i+1
     // })
     
+
+            proj_id: i+1,
+        }
+        allUsers.push(randUser)
+    }
+    return allUsers 
+
 };
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
 
-//   createRandomProject();
-//   createRandomUser();
-    // createRandomUser()
-    createRandomProject()
-    createRandomUser()
+  createRandomProject();
+  createRandomUser();
 
     const users = await User.bulkCreate(allUsers, {
       individualHooks: true,
@@ -70,15 +76,14 @@ const seedDatabase = async () => {
         user_id: users[Math.floor(Math.random() * users.length)].id,
       });
     }
+
     console.log(allUsers)
     console.log(allProjects)
+
   
     process.exit(0);
   };
-  
 
-// createRandomUser()
-// createRandomProject()
-// createRandomUser()
 seedDatabase();
+
   
