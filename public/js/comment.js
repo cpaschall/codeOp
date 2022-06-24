@@ -35,13 +35,14 @@ async function commentFormHandler(event) {
   event.preventDefault();
 
   const comment_data = document.querySelector('textarea[name="comment-body"]').value.trim();
-  
+  const project_id = document.querySelector('#project_id_hidden').value.trim();
 
   if (comment_data) {
       const response = await fetch('/api/comments', {
           method: 'POST',
           body: JSON.stringify({
-              comment_data
+              comment_data,
+              project_id
           }),
           headers: {
               'Content-Type': 'application/json'
@@ -50,7 +51,7 @@ async function commentFormHandler(event) {
 
       if (response.ok) {
         console.log(comment_data);
-          // document.location.reload();
+          document.location.reload();
       } else {
           alert(response.statusText);
       }
