@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
     // });
     res.render("homepage");
   } catch (err) {
-    res.statusMessage(500).json(err);
+    res.status(500).json(err);
   }
 });
 
@@ -117,7 +117,7 @@ router.get("/projectDisplay", withAuth, async (req, res) => {
     });
     // res.render('projectDisplay', projects)
   } catch (err) {
-    res.statusMessage(500).json(err);
+    res.status(500).json(err);
   }
 });
 
