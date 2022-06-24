@@ -30,7 +30,7 @@ router.get("/profile/:id", async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name', 'email', 'skills', 'proj_id'],
+          attributes: ['name', 'email', 'skills', 'project_id'],
         },
       ],
     });
