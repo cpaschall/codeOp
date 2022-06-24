@@ -54,12 +54,13 @@ router.get("/project", async (req, res) => {
   try {
     const projectData = await Project.findAll({
       attributes: ["proj_name", "summary"],
-      // include: [
-      //     {
-      //         model: User,
-      //         attributes: ['name']
-      //     },
-      // ],
+      include: [
+          {
+              model: User,
+              attributes: ['name']
+          },
+
+      ],
     });
     console.log(projectData);
 
@@ -96,6 +97,14 @@ router.get("/projectDisplay", withAuth, async (req, res) => {
   console.log("inside project diplay route");
   try {
     const projectData = await Project.findAll({
+      attributes:[
+'id',
+'proj_name',
+'summary',
+'language',
+'proj_repo',
+'proj_owned'
+      ],
       include: [
         {
           model: User,
@@ -103,7 +112,8 @@ router.get("/projectDisplay", withAuth, async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ["commentData"],
+          attributes: ['id',"commentData"],
+          include:{model:User,attributes:['name']}
         },
       ],
     });
