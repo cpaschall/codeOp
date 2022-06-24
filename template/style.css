@@ -2,6 +2,10 @@
     
 } */
 
+* {
+  font-family: 'Roboto Slab', serif;
+}
+
 /* hero section */
 #hero .container-fluid {
   background-image: url("../public/assets/VennDia.png");
@@ -11,9 +15,28 @@
   height: 70vh;
 }
 
+/* about section on the homepage */
+.banner-about {
+  background-image: url("../public/assets/bg.png");
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* width: 100vw; */
+}
+
+.overlay {
+  background: linear-gradient(to bottom, rgba(48, 207, 208, 0.5), rgba(51, 8, 103, 0.5));
+  color:whitesmoke;
+  
+}
 
 .btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
   background-color: #FFAA00 !important;
+}
+
+.gradient-about {
+  background: linear-gradient(to left, rgba(168, 237, 234, 0.5), rgba(251, 252, 219, 0.5))
 }
 
 /* divider 'or' in login */
