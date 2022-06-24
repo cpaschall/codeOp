@@ -18,7 +18,7 @@
 
         {{#each projects as |project|}}
         <div class="row m-4">
-            <h4>{{project.proj_name}}</h4>
+            <h4>{{project.proj_name}} by {{user.name}}</h4>
             <hr>
 
             <!-- project card -->
@@ -28,6 +28,7 @@
                         <div class="card-header" id="headingOne">
                             <h5>Posted by {{user.name}}</h5>
                             <a href="{{project.proj_repo}}">Repo URL: {{project.proj_repo}}</a>
+
                             <p class="mb-0">
 
                                 <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
@@ -42,10 +43,10 @@
                             <div class="card-body">
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">
-                                
+
                                         <form class="comment-form">
                                             <div>
-                                                <textarea name="comment-body"></textarea>
+                                                <textarea name="comment-body" class="full-width"></textarea>
                                             </div>
 
                                             <div>
@@ -73,7 +74,7 @@
                 <div class="card">
                     <div class="card-header">
                         Skills needed:
-                        
+
                     </div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
@@ -89,12 +90,8 @@
                     <button class="btn btn-primary btn-md me-md-2 mt-2" type="submit">Apply</button>
                 </div>
             </div>
-            <!-- favorite icons -->
-            <div class="col-md-1">
-                <button type="button" id="star-fav" class="btn btn-default" onclick="">
-                    <span class="fa fa-star fa-lg" style="color:#FF8E31"></span>
-                </button>
-            </div>
+
+
         </div>
         {{/each}}
 
