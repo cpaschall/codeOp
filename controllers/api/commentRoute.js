@@ -6,9 +6,12 @@ const withAuth = require('../../utils/helpers');
 
 
 // Get all comments
-router.get("/", async (req, res) => {
+router.get("/:id", async (req, res) => {
     try{
      const comment_data = await Comment.findAll({
+        where: {
+            id: req.params.id
+        },
       attributes:['comment_data']
      });
      res.status(200).json(comment_data);
