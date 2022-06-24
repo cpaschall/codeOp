@@ -1,4 +1,4 @@
-<section class="vh-100">
+<section class="">
     <div class="container">
         <div class="row">
             <div class=" col page-header">
@@ -18,7 +18,7 @@
 
         {{#each projects as |project|}}
         <div class="row m-4">
-            <h4>{{project.proj_name}} by {{project.user.name}}</h4>
+            <h4>{{project.proj_name}} by {{user.name}}</h4>
             <hr>
 
             <!-- project card -->
@@ -26,7 +26,7 @@
                 <div class="accordion">
                     <div class="card">
                         <div class="card-header" id="headingOne">
-                            <h5>Posted by {{user.name}}</h5>
+                            
                             <a href="{{project.proj_repo}}">Repo URL: {{project.proj_repo}}</a>
 
                             <p class="mb-0">
