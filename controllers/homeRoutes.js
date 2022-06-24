@@ -46,6 +46,10 @@ router.get("/signup", async (req, res) => {
   return res.render("signup");
 });
 
+router.get("/profile", (req, res) => {
+  return res.render("profile");
+});
+
 router.get("/project", async (req, res) => {
   try {
     const projectData = await Project.findAll({

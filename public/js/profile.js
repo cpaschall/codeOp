@@ -4,6 +4,7 @@
 // const userId = parseInt(parsedCurrUrl[parsedCurrUrl.length -1]);
 // const req_url = `/api/blog/${userId}`
 
+// users profile needs to be revisited
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -11,7 +12,7 @@ const newFormHandler = async (event) => {
   const skills = $("#skills_offered").val();
 
  if (name && skills) {
-    const response = await fetch(`/api/profile`, {
+    const response = await fetch(`/api/users/${user.id}`, {
       method: "POST",
       body: JSON.stringify({ name, skills }),
       headers: {
