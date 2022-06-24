@@ -5,7 +5,7 @@ const project = require('../../models/Project');
 const withAuth = require('../../utils/helpers');
 
 
-//Get all comments
+// Get all comments
 router.get("/", async (req, res) => {
     try{
      const commentData = await Comment.findAll({
@@ -22,8 +22,8 @@ router.post('/', withAuth, async (req,res) =>{
         if (req.session){
             const commentPost = await Comment.create({
                 commentData: req.body.commentData,
-                project_id: req.body.project_id,
-                user_id: req.session.user_id
+                // project_id: req.body.project_id,
+                // user_id: req.session.user_id
             })
             res.status(200).json(commentPost);
         } 
