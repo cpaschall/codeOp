@@ -14,7 +14,7 @@ const createRandomProject = () => {
     for(var i = 0; i <= 5; i++) {
         let randProj = {
 
-            id: i+1,
+            // id: i+1,
             proj_name: faker.music.songName(),
             summary: faker.company.catchPhrase(),
             language: ["HTML", "JavaScript", "CSS", "MySql", "React"]
@@ -36,11 +36,12 @@ const createRandomUser = () => {
             email: faker.internet.email(),
             password: faker.internet.password(),
             skills: ["HTML", "JavaScript", "CSS", "MySql", "React"],
-            proj_id: i+1
+            // proj_id: i+1
         }
         allUsers.push(randUser)
     }
     return allUsers
+}
     // console.log(allUsers)
     // console.log({
     //     name: faker.internet.userName(),
@@ -51,25 +52,27 @@ const createRandomUser = () => {
     // })
     
 
-            proj_id: i+1,
-        }
-        allUsers.push(randUser)
-    }
-    return allUsers 
+            // proj_id: i+1,
+//         }
+//         allUsers.push(randUser)
+//     }
+//     return allUsers 
 
-};
+// };
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
 
-  createRandomProject();
+  // createRandomProject();
   createRandomUser();
 
     const users = await User.bulkCreate(allUsers, {
       individualHooks: true,
       returning: true,
     });
-  
+    
+    createRandomProject();
+
     for (const project of allProjects) {
       await Project.create({
         ...project,
