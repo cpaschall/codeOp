@@ -1,49 +1,37 @@
 
 <hero id="hero">
     <div class="container-fluid d-sm-flex align-items-center justify-content-center">
-        <div class="row text-primary gx-5 text-center">
-            <div class="col">
-                <h3 class="p-5">Developers</h3>
-                {{#each user}}
-                <p>
-                    {{user.id}}. {{user.name}}
-                </p>
-                {{/each}}
-
+        <div class="row text-center overlay-hero">
+            <div class="col mx-4 px-2">
+                <h1 class=" fw-bold" style="color:#013BC2">Developers</h1>
             </div>
 
             <div class="col">
-                <h3 class="p-5">About codeOp</h3>
+                <h1 class="fw-bold " style="color:#FF7400">codeOp</h1>
             </div>
-
-            <div class="col">
-                <h3 class="p-5">Projects</h3>
-                <!-- {{#each project}} -->
-                <p>
-                    <!-- {{project.id}}
-                    {{project.proj_name}} -->
-                </p>
-                <!-- {{/each}} -->
+                    
+            <div class="col mx-2 px-4">
+                <h1 class="fw-bold" style="color:#013BC2">Projects</h1>
             </div>
         </div>
 
     </div>
 </hero>
 
-<section id="about">
+<section id="about" class="about">
     <div class="container-fluid banner-about">
-        <div class="overlay d-flex align-items-center justify-content-center py-5">
-            <h2 class="fw-bold">About codeOp</h2>
+        <div class="overlay-about d-flex align-items-center justify-content-center py-5">
+            <h2 class="fw-bold" style="color: #013BC2;">About codeOp</h2>
         </div>
     </div>
     <div class="container-fluid">
         <div class="row gradient-about">
-            <div class="col-md-6 py-3">
-                <img src="/assets/istockphoto-1010594174-612x612.jpg" class="img-fluid" width="100%" alt="collab">
+            <div class="col-md-6 p-2">
+                <img src="/assets/istockphoto-1010594174-612x612.jpg" class="img-fluid" width="100%" alt="group collab image">
             </div>
             <div class="col-md-6 ">
                 <div class="d-flex align-items-center">
-                    <p class="m-5 py-4" style="color: #013BC2">
+                    <p class="m-3 py-5" style="color: #013BC2; font-weight: 600;">
                         Strated by a group of bootcamp students in 2022. <br/> <br/>
                         codeOp is dedicated to providing a platform for budding developers, project managers, and/or seasoned developers to share skills and opportunities.
                     </p>
