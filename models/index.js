@@ -12,7 +12,7 @@ Project.belongsTo(User, {
 });
 
 Project.hasMany(User, {
-  foreignKey: 'proect_id',
+  foreignKey: 'project_id',
   onDelete: 'CASCADE'
 });
 
