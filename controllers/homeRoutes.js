@@ -119,7 +119,7 @@ router.get("/projectDisplay", withAuth, async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ['id', "comment_data"],
+          attributes: ['id', "comment_data",'user_id','project_id'],
           include: { model: User, attributes: ['name'] }
         },
       ],
