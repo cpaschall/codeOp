@@ -23,6 +23,29 @@ router.post('/signup', async (req, res) => {
   }
 });
 
+// individual user profile
+router.get("/profile/:id", async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name', 'email', 'skills', 'proj_id'],
+        },
+      ],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('profile', {
+      ...user,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Read
 router.get("/", async (req, res) => {
   try {
