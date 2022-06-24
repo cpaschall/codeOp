@@ -4,12 +4,20 @@
 
 /* hero section */
 #hero .container-fluid {
-    background-image: url("/assets/VennDia.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    /* background-attachment: fixed; */
-    height: 70vh;
+  background-image: url("/assets/VennDia.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  height: 75vh;
+}
+
+.overlay-hero {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  background: linear-gradient(to top, rgba(168, 237, 234, 0.5), rgba(230, 233, 240, 0));
 }
 
 /* about section on the homepage */
@@ -17,24 +25,34 @@
   background-image: url("/assets/bg.png");
   position: relative;
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
   /* width: 100vw; */
 }
 
-.overlay {
-  background: linear-gradient(to bottom, rgba(48, 207, 208, 0.5), rgba(51, 8, 103, 0.5));
-  color:whitesmoke;
-  
+.overlay-about {
+  background: linear-gradient(to top, rgba(251, 252, 219, 0.5), rgba(172, 224, 249, 0.5));
 }
 
 .gradient-about {
-  background: linear-gradient(to left, rgba(168, 237, 234, 0.5), rgba(251, 252, 219, 0.5))
+  background: linear-gradient(to left, rgba(168, 237, 234, 0.5), rgba(251, 252, 219, 0.5));
 }
 
-/* turn all green button to orange yellow */
-.btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
-  background-color: #FFAA00 !important;
+/* login section */
+.login-visual {
+  background-image: url("/assets/bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* project page */
+.proj-page {
+  background: url("/assets/bg.png");
+  background-size: cover;
+}
+
+.overlay-proj {
+  background: linear-gradient(to top, rgba(168, 237, 234, 0.5), rgba(251, 252, 219, 0.5));
 }
 
 /* divider 'or' in login */
@@ -55,4 +73,9 @@ height: 100%;
 }
 .full-width {
   width: 100%;
+}
+
+/* turn all green button to orange yellow */
+.btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
+  background-color: #FFAA00 !important;
 }
