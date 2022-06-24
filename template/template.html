@@ -19,10 +19,10 @@
     <header>
         <!-- this should be pasted to 'main' -->
         <!-- navbar and footer should be shown in every pages -->
-        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary bg-gradient">
             <div class="container-fluid">
                 <a href="#" class="navbar-brand">
-                    <img src="../public/assets/logo.png" height="70px" alt="logo">
+                    <img src="../public/assets/Logocodeop (3).png" height="100px" alt="logo">
                 </a> 
 
                 <button 
@@ -67,11 +67,11 @@
         <!-- paste to homepage -->
         <!-- still figuring out how will the layout look like when it hits sm -->
         <!-- about can't contain too many description. Maybe add a link to about? or it goes down the page -->
-        <section id="hero" class="">
+        <section id="hero">
             <div class="container-fluid d-sm-flex align-items-center justify-content-center">
-                <div class="row text-primary gx-5 text-center">
-                    <div class="col">
-                        <h3 class="p-5">Developers</h3>
+                <div class="row text-center overlay-hero">
+                    <div class="col mx-4 px-2">
+                        <h1 class=" fw-bold" style="color:#013BC2">Developers</h1>
                         <!-- {{#each developers as |developer|}} -->
                         <p>
                             <!-- {{developer.id}}.
@@ -81,11 +81,11 @@
                     </div>
 
                     <div class="col">
-                        <h3 class="p-5">About codeOp</h3>
+                        <h1 class="fw-bold " style="color:#FF7400">codeOp</h1>
                     </div>
                     
-                    <div class="col">
-                        <h3 class="p-5">Projects</h3>
+                    <div class="col mx-2 px-4">
+                        <h1 class="fw-bold" style="color:#013BC2">Projects</h1>
                         <!-- {{#each project}} -->
                         <p>
                             <!-- {{project.id}}
@@ -99,20 +99,20 @@
         </section>
 
         <!-- about section -->
-        <section id="about">
+        <section id="about" class="about">
             <div class="container-fluid banner-about">
-                <div class="overlay d-flex align-items-center justify-content-center py-5">
-                    <h2 class="fw-bold">About codeOp</h2>
+                <div class="overlay-about d-flex align-items-center justify-content-center py-5">
+                    <h2 class="fw-bold" style="color: #013BC2;">About codeOp</h2>
                 </div>
             </div>
             <div class="container-fluid">
                 <div class="row gradient-about">
-                    <div class="col-md-5">
+                    <div class="col-md-6 p-2">
                         <img src="../public/assets/istockphoto-1010594174-612x612.jpg" class="img-fluid" width="100%" height="auto" alt="collab">
                     </div>
-                    <div class="col-md-7 ">
+                    <div class="col-md-6 ">
                         <div class="d-flex align-items-center">
-                            <p class="m-5 py-4" style="color: #013BC2">
+                            <p class="m-3 py-5" style="color: #013BC2; font-weight: 600;">
                                 Strated by a group of bootcamp students in 2022. <br/> <br/>
                                 codeOp is dedicated to providing a platform for budding developers, project managers, and/or seasoned developers to share skills and opportunities.
                             </p>
@@ -126,16 +126,24 @@
         <section class="vh-100 py-5">
             <div class="container-fluid h-custom">
                 <div class="row d-flex justify-content-center align-items-centent h-100">
+
                     <!-- visual/image here -->
                     <div class="col-md-9 col-lg-6 col-xl-5">
-                        <img src="../public/assets/login_bg (1).png" class="img-fluid" alt="login visual">
+                        <!-- <img src="../public/assets/bg.png" class="img-fluid login-visual" alt="login visual"> -->
+                        <div class="login-visual img-fluid">
+                                <img src="../public/assets/Logocodeop (3).png" height="130px;" class="m-2" alt="logo in login visual">
+                            <div class=" m-5 text-center">
+                                <h3 class="pb-5 fw-bold">We're looking forward to your ideas & contributions</h3>
+                                <p class="py-5">A site by developers for developers</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                    <div class="col-md-8 col-lg-6 col-xl-4">
                         <!-- login form -->
                     <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                         <form id="login-form">
                             <!-- Email input -->
-                            <div class="form-outline my-4 ">
+                            <div class="form-outline my-4">
                                 <label class="form-label" for="email-input">Login to your account</label>
                                 <input type="email" id="login-email" class="form-control form-control-lg"
                                 placeholder="Email"/>
@@ -150,7 +158,7 @@
                                 <button class="mt-2 btn btn-primary btn-lg">Sign In</button>
                             </div>
 
-                            <div class="divider d-flex align-items-center my-4">
+                            <div class="divider d-flex align-items-center my-3">
                                 <p class="text-center fw-bold mx-3 mb-0">Or</p>
                               </div>
 
@@ -307,14 +315,14 @@
         </section>
 
         <!-- display projects page -->
-        <section class="vh-100">
-            <div class="container">
+        <section class="proj-page">
+            <div class="container-fluid overlay-proj">
                 <div class="row">
-                    <div class=" col page-header">
-                        <h2>Project Dashboard</h2>
+                    <div class="col mt-3 mx-3 page-header">
+                        <h2 class="fw-bold" style="color:#013BC2;">Project Dashboard</h2>
                     </div>
-                    <div class="col mt-2 d-md-flex justify-content-md-end">
-                        <a href="/project" class="btn btn-success text-dark btn-lg">Post a project</a>
+                    <div class="col mt-3 d-md-flex justify-content-md-end">
+                        <a href="/project" class="btn btn-primary btn-lg">Post a project</a>
                     </div>
                 </div>
                 <div class="row m-4">
@@ -322,60 +330,55 @@
                     <hr>
 
                     <!-- project card -->
-                    <div class="col-md-8">
-                        <div class="accordion">
-                            <div class="card">
+                    <div class="col-md-9 mb-5">
+                        <div class="overlay-proj">
+                            <div class="card" style="background-color: #FFBA31;">
                                 <div class="card-header" id="headingOne">
-                                    <h5>Posted by name on</h5>
-                                    <p class="mb-0">
+                                    <a href="{{project.proj_repo}}">Repo URL: {{project.proj_repo}}</a>
         
-                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa fugit dolores est nihil repellendus accusamus dolore quia obcaecati. Debitis quia magni doloremque assumenda eius repellendus amet dolor voluptatem hic quod.
-                                        </button>
-                                    </p>
+                                    <p>{{project.summary}}</p>
                                 </div>
 
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item">
-                                                Commenter name: <br>
-                                                I would love join!!!!
-                                            </li>
-                                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                                            <li class="list-group-item">Vestibulum at eros</li>
-                                        </ul>
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item" style="background-color: #FFCA61;">
+                                            {{comment.user.name}} <br>
+                                            {{comment}}
+                                        </li>
+                                        <!-- <li class="list-group-item">Dapibus ac facilisis in</li>
+                                        <li class="list-group-item">Vestibulum at eros</li> -->
+                                    </ul>
 
-                                        <div class="d-md-flex justify-content-md-end">
-                                            <button class="btn btn-primary me-md-2" type="submit">Add a comment</button>
-                                        </div>
+                                    <div class="d-md-flex justify-content-md-end">
+                                        <button class="btn btn-primary me-md-2 mt-2" type="submit">Add a comment</button>
                                     </div>
-                                  </div>
+                                </div>
+                                  
                             </div>
                         </div>
                     </div>
                     <!-- skills needed card -->
                     <div class="col-md-3">
-                        <div class="card">
+                        <div class="card mb-5" style="background-color: #FF8E31;">
                             <div class="card-header">
                                 Skills needed:
                             </div>
                             <div class="card-body">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Cras justo odio</li>
+                                    <li class="list-group-item" style="background-color: #FFA961;">Cras justo odio</li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                             <button class="btn btn-primary btn-md me-md-2 mt-2" type="submit">Apply</button>
-                        </div>
+                        </div> -->
                     </div>
                     <!-- favorite icons -->
-                    <div class="col-md-1">
+                    <!-- <div class="col-md-1">
                         <button type="button" id="star-fav" class="btn btn-default" onclick="">
                             <span class="fa fa-star fa-lg" style="color:#FF8E31"></span>
                         </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -383,7 +386,7 @@
         
     </main>
 
-    <footer class="p-5 bg-primary text-center text-light position-relative">
+    <footer class="p-5 bg-primary bg-gradient text-center text-light position-relative">
         <div class="container">
             <p class="lead">Copyright &copy; 2022 SuperGroup</p>
 

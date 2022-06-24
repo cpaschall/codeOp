@@ -1,17 +1,17 @@
 // async function commentFormHandler(event) {
 //   event.preventDefault();
 
-//   const commentData = $('textarea[name="comment-body"]').val().trim();
+//   const comment_data = $('textarea[name="comment-body"]').val().trim();
 
 //   // const project_id = window.location.toString().split('/')[
 //   //     window.location.toString().split('/').length - 1
 //   // ];
 
-//   if (commentData) {
+//   if (comment_data) {
 //     const response = await fetch("/api/comments", {
 //       method: "POST",
 //       body: JSON.stringify({
-//         commentData,
+//         comment_data,
 //       }),
 //       headers: {
 //         "Content-Type": "application/json",
@@ -22,7 +22,7 @@
 //       console.log("comment created");
 
 //       // const list = document.querySelector("ul.list-group");
-//       // const commentHTML = `<li>${commentData}</li>`;
+//       // const commentHTML = `<li>${comment_data}</li>`;
 //       // list.prepend(commentHTML);
 //     } else {
 //       alert(response.statusText);
@@ -34,14 +34,14 @@
 async function commentFormHandler(event) {
   event.preventDefault();
 
-  const commentData = document.querySelector('textarea[name="comment-body"]').value.trim();
+  const comment_data = document.querySelector('textarea[name="comment-body"]').value.trim();
   
 
-  if (commentData) {
+  if (comment_data) {
       const response = await fetch('/api/comments', {
           method: 'POST',
           body: JSON.stringify({
-              commentData
+              comment_data
           }),
           headers: {
               'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ async function commentFormHandler(event) {
       });
 
       if (response.ok) {
-        console.log(commentData);
+        console.log(comment_data);
           // document.location.reload();
       } else {
           alert(response.statusText);
