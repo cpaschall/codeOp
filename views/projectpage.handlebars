@@ -8,9 +8,9 @@
 
             <div class="col mt-2 d-md-flex justify-content-md-end">
                 {{#if logged_in}}
-                <a href="/project" class="btn btn-success text-dark btn-lg">Post a project</a>
+                <a href="/project" class="btn btn-primary text-dark btn-lg">Post a project</a>
                 {{else}}
-                <a href="/login" class="btn btn-success text-dark btn-lg">Post a project</a>
+                <a href="/login" class="btn btn-primary text-dark btn-lg">Post a project</a>
                 {{/if}}
             </div>
 
@@ -18,7 +18,7 @@
 
         {{#each projects as |project|}}
         <div class="row m-4">
-            <h4>{{project.proj_name}} by {{user.name}}</h4>
+            <h4>{{project.proj_name}} by {{project.user.name}}</h4>
             <hr>
 
             <!-- project card -->

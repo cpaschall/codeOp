@@ -20,7 +20,9 @@ async function commentFormHandler(event) {
 
     if (response.ok) {
       console.log("comment created");
-      // document.location.reload();
+      const list = document.querySelector("ul.list-group");
+      const commentHTML = `<li>${commentData}</li>`;
+      list.prepend(commentHTML);
     } else {
       alert(response.statusText);
     }
