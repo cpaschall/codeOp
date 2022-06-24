@@ -12,12 +12,12 @@ Project.belongsTo(User, {
 });
 
 Project.hasMany(User, {
-  foreignKey: 'proj_id',
+  foreignKey: 'proect_id',
   onDelete: 'CASCADE'
 });
 
 User.belongsTo(Project, {
-  foreignKey: 'proj_id'
+  foreignKey: 'project_id'
 });
 
 User.hasMany(Comment, {
@@ -29,12 +29,12 @@ Comment.belongsTo(User, {
   });
 
 Project.hasMany(Comment, {
-  foreignKey: 'proj_id',
+  foreignKey: 'project_id',
   onDelete: 'CASCADE'
 });
 
 Comment.belongsTo(Project, {
-  foreignKey: 'proj_id'
+  foreignKey: 'project_id'
 });
 
 module.exports = { User, Project, Comment};

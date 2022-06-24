@@ -24,7 +24,7 @@
             <!-- project card -->
             <div class="col-md-9 mb-5">
                 <div class="accordion" >
-                    <div class="card" style="background-color: #FFBA31;">
+                    <div class="card">
                         <div class="card-header" id="headingOne">
                             
                             <a href="{{project.proj_repo}}">Repo URL: {{project.proj_repo}}</a>
@@ -63,15 +63,15 @@
             </div>
             <!-- skills needed card -->
             <div class="col-md-3">
-                <div class="card mb-5" style="background-color: #FF8E31;">
-                    <div class="card-header">
+                <div class="card mb-5" >
+                    <div class="card-header fw-bold">
                         Skills needed:
 
                     </div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
                             {{#each project.language}}
-                            <li class="list-group-item" style="background-color: #FFA961;">{{this}}</li>
+                            <li class="list-group-item" >{{this}}</li>
                             {{/each}}
 
                         </ul>
