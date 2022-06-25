@@ -45,14 +45,14 @@ User.init(
           this.setDataValue('skills', val.join(', '));
       },
     },
-    proj_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'project',
-        key: 'id'
-      }, 
-    }
+    // project_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: true,
+    //   references: {
+    //     model: 'project',
+    //     key: 'id'
+    //   }, 
+    // }
   },
   {
     hooks: {

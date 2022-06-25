@@ -1,0 +1,8 @@
+[
+    {
+        "name": "tester 1",
+        "email": "tester1@email.com",
+        "password": "1234",
+        "skills": ["html", "css", "javascript"]
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "proj_name": "Project 1",
+        "summary": "Project Descript 1",
+        "language": ["html", "css"],
+        "proj_repo": "test repo url",
+        "proj_owned": true,
+        "user_id": 1
+    }
+]
