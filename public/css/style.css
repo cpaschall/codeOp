@@ -1,9 +1,10 @@
 * {
   font-family: 'Roboto Slab', serif;
 }
-.main {
+/* .main {
   height: 75vh;
-}
+} */
+
 /* hero section */
 #hero .container-fluid {
   background-image: url("/assets/VennDia.png");

@@ -24,7 +24,7 @@
             <!-- project card -->
             <div class="col-md-9 mb-5">
                 <div class="accordion">
-                    <div class="card">
+                    <div class="card border-primary">
                         <div class="card-header" id="headingOne">
 
                             <a href="{{project.proj_repo}}">Repo URL: {{project.proj_repo}}</a>
@@ -32,23 +32,31 @@
                             <p>{{project.summary}}</p>
                         </div>
 
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush">
+                        <div class="card-body ">
+                            <ul class="list-group list-group-flush ">
+                                {{#each project.comments as |comment|}}
+                                <li class="list-group-item">
+                                    <p>
+                                        {{comment.comment_data}} <br/>
+                                        -{{user.name}}
+                                    </p>
+                                </li>
+                                {{/each}}
                                 <li class="list-group-item">
 
                                     <form class="comment-form">
                                         <div>
-                                            <textarea name="comment-body" class="full-width"></textarea>
+                                            <textarea name="comment-body" class="full-width" rows="4"></textarea>
                                             <input type="hidden" id="project_id_hidden" value="{{project.id}}"></input>
                                         </div>
 
                                         <div>
-                                            <button type="submit">add comment</button>
+                                            <button class="btn btn-primary" type="submit">add comment</button>
                                         </div>
                                     </form>
-                                    {{#each project.comments as |comment|}}
+                                    {{!-- {{#each project.comments as |comment|}}
                                     <p>{{comment.comment_data}}</p>
-                                    {{/each}}
+                                    {{/each}} --}}
                                 </li>
                             </ul>
 
@@ -66,12 +74,12 @@
             </div>
             <!-- skills needed card -->
             <div class="col-md-3">
-                <div class="card mb-5">
+                <div class="card border-primary mb-5">
                     <div class="card-header fw-bold">
                         Skills needed:
 
                     </div>
-                    <div class="card-body">
+                    <div class="card-body border-primary">
                         <ul class="list-group list-group-flush">
                             {{#each project.language}}
                             <li class="list-group-item">{{this}}</li>
