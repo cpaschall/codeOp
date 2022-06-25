@@ -1,8 +1,6 @@
 const router = require("express").Router();
 
 const { Project, User, Comment } = require("../models");
-// const seeds = require('../seeds/fakerseeds.js')
-// const { faker } = require("@faker-js/faker")
 
 const withAuth = require("../utils/helpers");
 
@@ -14,7 +12,7 @@ router.get("/", async (req, res) => {
     // });
     res.render("homepage");
   } catch (err) {
-    res.status(500).json(err);
+    res.statusMessage(500).json(err);
   }
 });
 
@@ -121,7 +119,7 @@ router.get("/projectDisplay", withAuth, async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ['id', "comment_data",'user_id','project_id'],
+          attributes: ['id', "comment_data"],
           include: { model: User, attributes: ['name'] }
         },
       ],
@@ -129,17 +127,15 @@ router.get("/projectDisplay", withAuth, async (req, res) => {
 
     const projects = projectData.map((project) => project.get({ plain: true }));
     console.log(projectData);
-    console.log(projects);
+    console.log(JSON.stringify({projects}, null, 2));
     res.render("projectpage", {
       projects,
       logged_in: req.session.logged_in,
     });
     // res.render('projectDisplay', projects)
   } catch (err) {
-    res.status(500).json(err);
+    res.statusMessage(500).json(err);
   }
 });
-
-
 
 module.exports = router;

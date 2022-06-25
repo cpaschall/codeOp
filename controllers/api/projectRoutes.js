@@ -8,8 +8,7 @@ router.post('/', withAuth, async (req, res) => {
         const newProject = await Project.create({
             ...req.body,
           proj_owned: true,
-          user_id: req.session.user_id,
-          project_id:req.session.project_id
+          user_id: req.session.user_id
            
         });
         console.log(newProject)
@@ -21,7 +20,7 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-// Read - find all projects
+// Read - find all users
 router.get('/', async (req,res) => {
     try {
         const projectData = await Project.findAll()

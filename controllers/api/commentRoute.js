@@ -6,12 +6,9 @@ const withAuth = require('../../utils/helpers');
 
 
 // Get all comments
-router.get("/:id", async (req, res) => {
+router.get("/", async (req, res) => {
     try{
      const comment_data = await Comment.findAll({
-        where: {
-            id: req.params.id
-        },
       attributes:['comment_data']
      });
      res.status(200).json(comment_data);
@@ -21,6 +18,9 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post('/', withAuth, async (req,res) =>{
+    console.log("auth_success");
+    console.log(req.body);
+    console.log(req.session);
     try {
         if (req.session){
             const commentPost = await Comment.create({
