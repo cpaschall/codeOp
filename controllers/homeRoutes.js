@@ -140,11 +140,9 @@ router.get("/projectDisplay", withAuth, async (req, res) => {
   }
 });
 
-// router.get('/seedTest', async (req, res) => {
-//   const allSeeds = await seeds
-//   const seedData = allSeeds.map((seed) => seed.get({ plain: true }));
-//   // seedData = seeds.get({ plain: true })
-//   res.render(seedData)
-// })
+router.get('/seedTest', async (req, res) => {
+  
+  res.render('seedtest')
+})
 
 module.exports = router;

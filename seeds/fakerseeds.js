@@ -15,7 +15,7 @@ const createRandomProject = () => {
     for(var i = 0; i < 5; i++) {
         let randProj = {
 
-            // id: i+1,
+            id: i+1,
             proj_name: faker.music.songName(),
             summary: faker.company.catchPhrase(),
             language: ["HTML", "JavaScript", "CSS", "MySql", "React"],
@@ -23,8 +23,15 @@ const createRandomProject = () => {
         }
         allProjects.push(randProj)
     }
-    fs.appendFile( path, data[, options], callback )
-    return allProjects
+    // const data = "test"
+    fs.writeFile('seeds/projects.json', JSON.stringify(allProjects), (err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("File written successfully\n");
+      }
+    })
+    // return allProjects
 };
 
 const createRandomUser = () => {
@@ -33,17 +40,24 @@ const createRandomUser = () => {
 
     for(var i = 0; i < 5; i++) {
         let randUser = {
-            // id: i+1,
-
+            id: i+1,
             name: faker.internet.userName(),
             email: faker.internet.email(),
             password: faker.internet.password(),
             skills: ["HTML", "JavaScript", "CSS", "MySql", "React"],
-            // proj_id: i+1
+            proj_id: i+1
         }
         allUsers.push(randUser)
     }
-    return allUsers
+    // const data = "test"
+    fs.writeFile('seeds/users.json', JSON.stringify(allUsers), (err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("File written successfully\n");
+      }
+    })
+    // return allUsers
 }
     // console.log(allUsers)
     // console.log({
@@ -68,30 +82,43 @@ const seedDatabase = async () => {
     // await sequelize.sync({ force: false , alter : true })
 
   // createRandomProject();
-  createRandomUser();
-  // createRandomProject();
+  // createRandomUser();
+  // // createRandomProject();
 
-    const users = await User.bulkCreate(allUsers, {
-      individualHooks: true,
-      returning: true,
-    });
+  //   const users = await User.bulkCreate(allUsers, {
+  //     individualHooks: true,
+  //     returning: true,
+  //   });
     
-    createRandomProject();
+  //   createRandomProject();
 
-    for (const project of allProjects) {
-      await Project.create({
-        ...project,
-        user_id: users[Math.floor(Math.random() * users.length)].id,
-      });
-    }
+  //   for (const project of allProjects) {
+  //     await Project.create({
+  //       ...project,
+  //       user_id: users[Math.floor(Math.random() * users.length)].id,
+  //     });
+  //   }
 
-    console.log(allUsers)
-    console.log(allProjects)
-    return
-  
+  //   console.log(allUsers)
+  //   console.log(allProjects)
+  //   return
+  createRandomUser();
+  createRandomProject();
+  process.exit(0);
     // process.exit(0);
   };
 
-seedDatabase();
+// seedDatabase();
+// createRandomUser();
+// createRandomProject();
+// process.exit(0);
+// const data = "test"
+// fs.writeFile('users.txt', data, (err) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("File written successfully\n");
+//   }
+// })
 
   
