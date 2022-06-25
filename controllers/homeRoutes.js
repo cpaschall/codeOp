@@ -140,46 +140,6 @@ router.get("/projectDisplay", withAuth, async (req, res) => {
   }
 });
 
-// router.get("/seedProjects", async (req, res) => {
-//   // console.log("inside project diplay route");
-//   try {
-//     const projectData = await Project.findAll({
-//       attributes: [
-//         'id',
-//         'proj_name',
-//         'summary',
-//         'language',
-//         'proj_repo',
-//         'proj_owned'
-//       ],
-//       include: [
-//         {
-//           model: User,
-//           attributes: ["id", "name"],
-//         },
-//         // {
-//         //   model: Comment,
-//         //   attributes: ['id', "comment_data",'user_id','project_id'],
-//         //   include: { model: User, attributes: ['name'] }
-//         // },
-//       ],
-//     });
 
-//     const projects = projectData.map((project) => project.get({ plain: true }));
-//     console.log(projectData);
-//     console.log(projects);
-//     res.render("seedtest", {
-//       projects
-//       // logged_in: req.session.logged_in,
-//     });
-//     // res.render('projectDisplay', projects)
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-// router.get('/seedTest', async (req, res) => {
-  
-//   res.render('seedtest')
-// })
 
 module.exports = router;
