@@ -1,6 +1,8 @@
 const router = require("express").Router();
 
 const { Project, User, Comment } = require("../models");
+const seeds = require('../seeds/fakerseeds.js')
+const { faker } = require("@faker-js/faker")
 
 const withAuth = require("../utils/helpers");
 
@@ -137,5 +139,10 @@ router.get("/projectDisplay", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/seedTest', async (req, res) => {
+  
+  res.render('seedtest')
+})
 
 module.exports = router;
