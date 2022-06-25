@@ -5,8 +5,12 @@
 // const userData = require('./users.json');
 // const projectData = require('./projects.json');
 
+
 // // const skills = ["HTML", "JavaScript", "CSS", "MySql", "React"];
 // // const skillsArr = [];
+
+
+
 // const allUsers =[];
 // const allProjects = [];
 
@@ -83,6 +87,7 @@
 //   }
 //     console.log(allUsers)
 //     console.log(allProjects)
+
 //   //   return
 //   createRandomUser()
 //   createRandomProject()
@@ -96,4 +101,13 @@
 // seedDatabase()
 
 
-  
+//   createRandomUser()
+//   createRandomProject()
+//   process.exit(0);
+   
+//   };
+
+
+// createRandomUser()
+// createRandomProject()
+// seedDatabase()
