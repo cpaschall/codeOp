@@ -140,9 +140,9 @@ router.get("/projectDisplay", withAuth, async (req, res) => {
   }
 });
 
-router.get('/seedTest', async (req, res) => {
+// router.get('/seedTest', async (req, res) => {
   
-  res.render('seedtest')
-})
+//   res.render('seedtest')
+// })
 
 module.exports = router;
