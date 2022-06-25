@@ -37,5 +37,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: FORCETABLE }).then(() => {
-  app.listen(PORT, () => console.log(`Now listening on post ${PORT}`));
+  app.listen(PORT, () => console.log(`Now listening on post http://localhost:${PORT}`));
 });
