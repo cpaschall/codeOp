@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 const { Project, User, Comment } = require("../models");
 // const seeds = require('../seeds/fakerseeds.js')
-const { faker } = require("@faker-js/faker")
+// const { faker } = require("@faker-js/faker")
 
 const withAuth = require("../utils/helpers");
 
