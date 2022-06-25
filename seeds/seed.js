@@ -6,9 +6,12 @@ const projectData = require('./projectData.json');
 const commentData = require('./commentData.json');
 
 const seedDatabase = async () => {
-    await sequelize.query(`DROP DATABASE IF EXISTS ${process.env.DB_NAME};`)
-    await sequelize.query(`CREATE DATABASE ${process.env.DB_NAME};`)
-    await sequelize.query(`USE ${process.env.DB_NAME};`)
+    // await sequelize.query(`DROP DATABASE IF EXISTS ${process.env.DB_NAME};`)
+    // await sequelize.query(`CREATE DATABASE ${process.env.DB_NAME};`)
+    // await sequelize.query(`USE ${process.env.DB_NAME};`)
+    await sequelize.query(`DROP TABLE IF EXISTS comment;`)
+    await sequelize.query(`DROP TABLE IF EXISTS project;`)
+    await sequelize.query(`DROP TABLE IF EXISTS user;`)
     await sequelize.sync({ force: true });
 
     const users = await User.bulkCreate(userData, {

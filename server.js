@@ -11,8 +11,10 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 // Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({ helpers });
-const FORCETABLE = process.env.FORCETABLE || false;
+const hbs = exphbs.create({
+  helpers
+});
+const FORCETABLE = process.env.FORCETABLE === "true" ? true : false;
 
 const sess = {
   secret: 'Super secret secret',
@@ -31,11 +33,24 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({
+  extended: true
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
+const startServer = async () => {
+  if (FORCETABLE) {
+    await sequelize.query(`DROP TABLE IF EXISTS comment;`)
+    await sequelize.query(`DROP TABLE IF EXISTS project;`)
+    await sequelize.query(`DROP TABLE IF EXISTS user;`)
+  }
 
-sequelize.sync({ force: FORCETABLE }).then(() => {
-  app.listen(PORT, () => console.log(`Now listening on post http://localhost:${PORT}`));
-});
+  sequelize.sync({
+    force: FORCETABLE
+  }).then(() => {
+    app.listen(PORT, () => console.log(`Now listening on post http://localhost:${PORT}`));
+  });
+}
+
+startServer()
