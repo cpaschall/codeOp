@@ -1,1 +1,106 @@
-<h1>Seed Test pg working</h1>
+<section class="proj-page">
+    <div class="container-fluid overlay-proj">
+        <div class="row">
+            <div class="col mt-3 mx-3 page-header">
+                <h2 class="fw-bold" style="color:#013BC2;">Project Dashboard</h2>
+            </div>
+
+
+            <div class="col mt-3 d-md-flex justify-content-md-end">
+                {{#if logged_in}}
+                <a href="/project" class="btn btn-primary btn-lg">Post a project</a>
+                {{else}}
+                <a href="/login" class="btn btn-primary btn-lg">Post a project</a>
+                {{/if}}
+            </div>
+
+        </div>
+        <div>
+            <button type="submit" id="gen-proj">Random Project</button>
+        </div>
+        {{#each projects as |project|}}
+        <div class="row m-4 ">
+            <h4>{{project.proj_name}} by {{user.name}}</h4>
+            <hr>
+
+            <!-- project card -->
+            <div class="col-md-9 mb-5">
+                <div class="accordion">
+                    <div class="card border-primary">
+                        <div class="card-header" id="headingOne">
+
+                            <a href="{{project.proj_repo}}">Repo URL: {{project.proj_repo}}</a>
+
+                            <p>{{project.summary}}</p>
+                        </div>
+
+                        <div class="card-body ">
+                            <ul class="list-group list-group-flush ">
+                                {{#each project.comments as |comment|}}
+                                <li class="list-group-item">
+                                    <p>
+                                        {{comment.comment_data}} <br/>
+                                        -{{user.name}}
+                                    </p>
+                                </li>
+                                {{/each}}
+                                <li class="list-group-item">
+
+                                    <form class="comment-form">
+                                        <div>
+                                            <textarea name="comment-body" class="full-width" rows="4"></textarea>
+                                            <input type="hidden" id="project_id_hidden" value="{{project.id}}"></input>
+                                        </div>
+
+                                        <div>
+                                            <button class="btn btn-primary" type="submit">add comment</button>
+                                        </div>
+                                    </form>
+                                    {{!-- {{#each project.comments as |comment|}}
+                                    <p>{{comment.comment_data}}</p>
+                                    {{/each}} --}}
+                                </li>
+                            </ul>
+
+                            {{!-- <div class="d-md-flex justify-content-md-end">
+
+                                <button class="btn btn-primary me-md-2" id='commentbutton' type="submit">Add a
+                                    comment</button>
+                            </div> --}}
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- skills needed card -->
+            <div class="col-md-3">
+                <div class="card border-primary mb-5">
+                    <div class="card-header fw-bold">
+                        Skills needed:
+
+                    </div>
+                    <div class="card-body border-primary">
+                        <ul class="list-group list-group-flush">
+                            {{#each project.language}}
+                            <li class="list-group-item">{{this}}</li>
+                            {{/each}}
+
+                        </ul>
+                    </div>
+                </div>
+                {{!-- <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button class="btn btn-primary btn-md me-md-2 mt-2" type="submit">Apply</button>
+                </div> --}}
+            </div>
+
+
+        </div>
+        {{/each}}
+
+    </div>
+
+
+
+</section>
