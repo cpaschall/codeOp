@@ -12,7 +12,8 @@
     <!-- google font Roboto Slab -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/c502137733.js"></script>
     <link rel="stylesheet" href="/css/style.css">
@@ -21,7 +22,7 @@
 <body>
 
 
-    <header class="pb-5">
+    <header>
         <!-- this should be pasted to 'main' -->
         <!-- navbar and footer should be shown in every pages -->
         <nav class="navbar navbar-expand-md navbar-dark bg-primary p-3">
@@ -40,9 +41,9 @@
                         <li class="nav-item">
                             <a href="/" class="nav-link active" aria-current="page">Home</a>
                         </li>
-                        <li class="nav-item">
+                        {{!-- <li class="nav-item">
                             <a href="#about" class="nav-link">About</a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="/projectDisplay" class="nav-link">Projects</a>
                         </li>
@@ -69,7 +70,7 @@
         </nav>
     </header>
 
-    <main>
+    <main class="main">
         {{{ body }}}
     </main>
 
