@@ -38,12 +38,12 @@
 
                                         <form class="comment-form">
                                             <div>
-                                                <textarea name="comment-body" class="full-width"></textarea>
-                                                <input type="hidden" id="project_id_hidden" value="{{project.id}}" />
+                                                <textarea name="comment-body" class="full-width" id="comment_{{project.id}}"></textarea>
+                                                <input type="hidden" class="project_id_hidden" value="{{project.id}}" />
                                             </div>
 
                                             <div>
-                                                <button type="submit">add comment</button>
+                                                <button data-value="{{project.id}}" type="submit">add comment</button>
                                             </div>
                                         </form>
                                         {{#each project.comments as |comment|}}

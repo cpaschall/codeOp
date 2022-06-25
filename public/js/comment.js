@@ -33,9 +33,9 @@
 // $(".comment-form").on("submit", commentFormHandler);
 async function commentFormHandler(event) {
   event.preventDefault();
-
-  const comment_data = document.querySelector('textarea[name="comment-body"]').value.trim();
-  const project_id = document.querySelector('#project_id_hidden').value.trim();
+  const project_id = event.target.querySelector("button").getAttribute("data-value");
+  const comment_data = document.querySelector("#comment_" + project_id).value.trim();
+  
   
 
   if (comment_data) {
