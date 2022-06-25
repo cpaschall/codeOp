@@ -21,7 +21,6 @@
 
 This full-stack application is built from scratch using the Model View Controller (MVC) paradigm to connect a server-side API, user authentication, and a database. The application is called **codeOp**, which is a play on code and co-op. A number of nonprofits lack a development team and there are plenty of budding developers in need of real-world experience and seasoned ones who are happy to share their expertise. This site is designed to provide a space where they can share resources, gain real-world experience, and complete projects.
 
-- Any user can browse projects on the site.
 - Users who intend to contribute to a project or post a project must create a unique login and password.
 - Signup requires an email address, a username, and a password, plus a selection of existing skills.
 - A new project post requires username, project title, summary, and a selection of required skills.
@@ -110,7 +109,7 @@ npm i sequelize
 
 ---
 
-Visit [`codeOp`](https://www.codeop.herokuapp.com) and contribute!
+Visit [`codeOp`](https://www.codeop2.herokuapp.com) and contribute!
 
 ## Contributing
 
