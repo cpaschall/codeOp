@@ -1,6 +1,6 @@
 # codeOp
 
-![logo]("./assets/images/logo.png")
+![logo](./public/assets/logo.png)
 
 ## Contents
 
@@ -100,16 +100,21 @@ npm i sequelize
 ## Demo
 
 ---
-
-![screenshot](insertassetspath)
-
+### homepage hero
+### Homepage
+![screenshot-home](./public/assets/codeop_sc.png)
+### Create your project form
+![screenshot-makeProject](./public/assets/projectCreate.png)
+### See your projects on the dashboard. Other users are able to view and comment on your posting. Begin your colaborations here!   
+![screenshot-projectDash](./public/assets/projectDash.png)
+### 
 ![video](insertassetspath)
 
 ## Link
 
 ---
 
-Visit [`codeOp`](https://www.codeop2.herokuapp.com) and contribute!
+Visit [`codeOp`](https://codeop2.herokuapp.com/) and contribute!
 
 ## Contributing
 
