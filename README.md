@@ -114,7 +114,9 @@ https://drive.google.com/file/d/1h27tLKE7brOKi2bWWy8oMraj7EJINenv/view?usp=shari
 ---
 
 Visit [`codeOp`](https://codeop2.herokuapp.com/) and contribute!
-
+## License
+![apace](https://img.shields.io/badge/license-Apache%20License%202.0-blue)
+This application is covered by the Apache v2.0 License, the terms of which can be found [here](https://www.apache.org/licenses/LICENSE-2.0.txt).
 ## Contributing
 
 ---
