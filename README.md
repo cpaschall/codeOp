@@ -98,17 +98,16 @@ npm i sequelize
      change scripts:{start: } to node server.js in your package.json file
 
 ## Demo
+### Video demo link 
+https://drive.google.com/file/d/1h27tLKE7brOKi2bWWy8oMraj7EJINenv/view?usp=sharing
 
----
-### homepage hero
 ### Homepage
 ![screenshot-home](./public/assets/codeop_sc.png)
 ### Create your project form
 ![screenshot-makeProject](./public/assets/projectCreate.png)
 ### See your projects on the dashboard. Other users are able to view and comment on your posting. Begin your colaborations here!   
 ![screenshot-projectDash](./public/assets/projectDash.png)
-### 
-![video](insertassetspath)
+
 
 ## Link
 
