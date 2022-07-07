@@ -98,24 +98,25 @@ npm i sequelize
      change scripts:{start: } to node server.js in your package.json file
 
 ## Demo
+### Video demo link 
+https://drive.google.com/file/d/1h27tLKE7brOKi2bWWy8oMraj7EJINenv/view?usp=sharing
 
----
-### homepage hero
 ### Homepage
 ![screenshot-home](./public/assets/codeop_sc.png)
 ### Create your project form
 ![screenshot-makeProject](./public/assets/projectCreate.png)
 ### See your projects on the dashboard. Other users are able to view and comment on your posting. Begin your colaborations here!   
 ![screenshot-projectDash](./public/assets/projectDash.png)
-### 
-![video](insertassetspath)
+
 
 ## Link
 
 ---
 
 Visit [`codeOp`](https://codeop2.herokuapp.com/) and contribute!
-
+## License
+![apace](https://img.shields.io/badge/license-Apache%20License%202.0-blue)
+This application is covered by the Apache v2.0 License, the terms of which can be found [here](https://www.apache.org/licenses/LICENSE-2.0.txt).
 ## Contributing
 
 ---
